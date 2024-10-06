@@ -1,0 +1,7 @@
+.bg{
+    background-image: url('/assets/img/avatar-bride.png');
+    background-size: cover;
+    height: 100dvh;
+    background-position: center;
+    filter:drop-shadow( 2px 6px 2px black)
+}

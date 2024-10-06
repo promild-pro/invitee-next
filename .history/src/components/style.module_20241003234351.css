@@ -1,0 +1,13 @@
+.bgSection{
+    background-image: url('/assets/img/bird.jpg');
+    /* position: absolute; */
+    background-size: cover;
+    background-position: center;
+
+    height: 100vh;
+    /* backdrop-filter: blur; */
+    backdrop-filter: brighnest(90%);
+}
+.bg{
+    background-color: blue;
+}

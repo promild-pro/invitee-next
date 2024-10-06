@@ -1,0 +1,14 @@
+.bgSection{
+    background-image: url('/assets/img/bird.jpg');
+    /* position: absolute; */
+    background-size: cover;
+    background-position: center;
+
+    height: 100vh;
+    /* backdrop-filter: blur; */
+}
+.bgSection ::after{
+    backdrop-filter: brightness(0.5);
+    position: absolute;
+    height: 100vh;
+}

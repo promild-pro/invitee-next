@@ -1,0 +1,16 @@
+.bg{
+    background-image: url('/assets/img/bird.jpg');
+    height: 200dvh;
+    background-size: cover;
+    background-position: right;
+    object-fit: cover;
+}
+.bg::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 200dvh;
+    width: 100%;
+
+}

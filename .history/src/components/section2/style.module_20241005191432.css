@@ -1,0 +1,17 @@
+.bg{
+    background-image: url('/assets/img/avatar-bride.png');
+    background-size: cover;
+    height: 100dvh;
+    background-position: center;
+    filter:drop-shadow( 2px 6px 2px black);
+    position: relative;
+}
+.bg::after{
+    content: ""; /* Harus ada untuk pseudo-element */
+    position: absolute; /* Memposisikan overlay di atas gambar */
+    /* background-color:linear-gradient(to bottom, black, transparent); */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    height: 70%;
+    top: 50dvh;
+    width: 100%;
+}

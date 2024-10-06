@@ -1,0 +1,24 @@
+.bgSection{
+    background-image: url('/assets/img/bird.jpg');
+    /* position: absolute; */
+    background-size: cover;
+    background-position: center;
+
+    height: 100vh;
+    /* backdrop-filter: blur; */
+}
+.bgSection::after{
+    /* content: '';
+    z-index: 1;
+    backdrop-filter: brightness(0.5);
+    position: absolute; */
+    content: ""; /* Harus ada untuk pseudo-element */
+  position: absolute; /* Memposisikan overlay di atas gambar */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: rgba(255, 255, 255, 0.6); Warna latar belakang dengan transparansi */
+  backdrop-filter:brightness(0.8); /* Efek blur dan kecerahan pada backdrop */
+  z-index: 1; /* Pastikan overlay berada di atas gambar */
+}

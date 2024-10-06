@@ -1,0 +1,4 @@
+.bgSection{
+    background-image: url('/src/assets/img/bird.jpg');
+    background-size: cover;
+}
