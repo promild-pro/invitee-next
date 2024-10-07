@@ -1,6 +1,6 @@
 .bg{
     background-image: url('/assets/img/bird.jpg');
-    height: 330dvh;
+    height: 310dvh;
     background-size: cover;
     background-position: right;
     object-fit: cover;
@@ -13,7 +13,7 @@
     position: absolute;
     top: 0;
     background-color: rgba(0, 0, 0, 0.4);
-    height: 330dvh;
+    height: 310dvh;
     width: 100%;
 
 }

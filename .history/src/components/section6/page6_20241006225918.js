@@ -77,7 +77,7 @@ export default function Page6() {
                                 <h3 className="pl-2">BCA</h3>
                             </div>
                             <div className="m-auto w-[90%] pb-5">
-                                <p className="text-slate-700">6796586xxxxx a. n. Dilan</p>
+                                <p className="text-slate-900">6796586xxxxx a. n. Dilan</p>
                                 <button className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto ">
                                     <FaRegCopy />
                                     <p className="pl-2">Salin Nomor</p>
@@ -93,7 +93,7 @@ export default function Page6() {
                                 <h3 className="pl-2">DANA</h3>
                             </div>
                             <div className="m-auto w-[90%] pb-5">
-                                <p className="text-slate-700">6796586xxxxx a. n. Dilan</p>
+                                <p className="text-slate-900">6796586xxxxx a. n. Dilan</p>
                                 <button className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto ">
                                     <FaRegCopy />
                                     <p className="pl-2">Salin Nomor</p>

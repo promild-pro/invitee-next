@@ -3,8 +3,6 @@ import { ImLocation2 } from "react-icons/im";
 import { GrLocationPin } from "react-icons/gr";
 import { FaPeopleRoof, FaGift } from "react-icons/fa6";
 import { RiBankCardFill } from "react-icons/ri";
-import { FaRegCopy } from "react-icons/fa";
-
 
 
 
@@ -70,34 +68,11 @@ export default function Page6() {
                 <div className='text-center text-white w-2/3 m-auto my-10'>
                     <p>Bagi Keluarga dan Sahabat yang ingin menirimkan hadiah, silakan menirimkannya lewat :</p>
                 </div>
-                    <div className='w-[90%] m-auto text-white p-2' >
+                    <div className='w-[90%] m-auto text-white' >
                         <div className="text-blue-700 bg-white rounded-xl ">
-                            <div className="flex text-4xl p-5 font-bold italic">
+                            <div className="flex text-2xl p-10 font-bold italic">
                                 <RiBankCardFill />
-                                <h3 className="pl-2">BCA</h3>
-                            </div>
-                            <div className="m-auto w-[90%] pb-5">
-                                <p className="text-slate-700">6796586xxxxx a. n. Dilan</p>
-                                <button className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto ">
-                                    <FaRegCopy />
-                                    <p className="pl-2">Salin Nomor</p>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='w-[90%] m-auto text-white mb-2 p-2' >
-                        <div className="text-blue-700 bg-white rounded-xl ">
-                            <div className="flex text-4xl p-5 font-bold italic">
-                                <RiBankCardFill />
-                                <h3 className="pl-2">DANA</h3>
-                            </div>
-                            <div className="m-auto w-[90%] pb-5">
-                                <p className="text-slate-700">6796586xxxxx a. n. Dilan</p>
-                                <button className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto ">
-                                    <FaRegCopy />
-                                    <p className="pl-2">Salin Nomor</p>
-                                </button>
+                                <h3>BCA</h3>
                             </div>
                         </div>
                     </div>

@@ -20,7 +20,7 @@ export default function Page4(){
             <div className='bg-black bg-opacity-25 w-[90%] p-2 my-20 m-auto z-10 relative rounded-3xl'>
                 <div className='bg-black bg-opacity-20 border-double border-4  rounded-3xl m-auto'>
                     <div>
-                        <div className='w-1/2 m-auto rounded-full border-4 border-black border-double bg-white my-10 '>
+                        <div className='w-1/2 m-auto rounded-full border-4 border-black border-double bg-white my-10 overflow-y-hidden'>
                             <Image src={ImgMen} alt='img-men' className='h-[14rem] ' />
                         </div>
                         <div className='text-center text-white  py-5'>

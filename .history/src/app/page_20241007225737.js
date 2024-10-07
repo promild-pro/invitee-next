@@ -6,7 +6,7 @@ import Page4 from "@/components/section4/page4";
 import Page5 from "@/components/section5/page5";
 import Page6 from "@/components/section6/page6";
 import Page7 from "@/components/section7/page7";
-import Page8 from "@/components/section8/page8";
+import Page8 from "@/components/section8/page7";
 
 export default function Home() {
   return (
