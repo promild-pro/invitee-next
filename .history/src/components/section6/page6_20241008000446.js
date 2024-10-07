@@ -48,7 +48,7 @@ export default function Page6() {
                         <p>12</p>
                         <p className='text-xl'>Okt</p>
                     </div>
-                    <p  className='w-[30%] p-1 text-xl'>2024</p>
+                    <p  className='w-[30%] p-1'>2024</p>
                 </div>
                 <div className='text-center text-white w-2/3 m-auto my-10'>
                     <p>Pukul : 08.00 -selesai</p>

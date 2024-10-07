@@ -25,25 +25,25 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
     return (
         <div style={{  fontSize: '2rem', textAlign: 'center' }} className="flex mx-7 p-2 justify-between">
         {/* <div className="  h-auto">{days} <p className="text-sm ">Hari</p></div> */}
-        <div className="border rounded-lg bg-white bg-opacity-15 w-[4rem] h-[3.5rem]  flex justify-center items-center">
+        <div className="border rounded-lg bg-white bg-opacity-15 w-[5rem] h-[4rem]  flex justify-center items-center">
              <div className="leading-6">
                 {days}
                 <p className="text-sm">Hari</p>
              </div>
         </div>
-        <div className="border rounded-lg bg-white bg-opacity-15 w-[4rem] h-[3.5rem]  flex justify-center items-center">
+        <div className="border rounded-lg bg-white bg-opacity-15 w-[5rem] h-[4rem]  flex justify-center items-center">
              <div className="leading-6">
                 {hours}
                 <p className="text-sm">Jam</p>
              </div>
         </div>
-        <div className="border rounded-lg bg-white bg-opacity-15 w-[4rem] h-[3.5rem]  flex justify-center items-center">
+        <div className="border rounded-lg bg-white bg-opacity-15 w-[5rem] h-[4rem]  flex justify-center items-center">
              <div className="leading-6">
                 {minutes}
                 <p className="text-sm">menit</p>
              </div>
         </div>
-        <div className="border rounded-lg bg-white bg-opacity-15 w-[4rem] h-[3.5rem]  flex justify-center items-center">
+        <div className="border rounded-lg bg-white bg-opacity-15 w-[5rem] h-[4rem]  flex justify-center items-center">
              <div className="leading-6">
                 {seconds}
                 <p className="text-sm">Detik</p>

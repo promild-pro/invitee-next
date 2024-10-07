@@ -20,13 +20,13 @@ export default function Page6() {
             <div className='w-[90%] m-auto bg-black bg-opacity-30 rounded-3xl border-4 border-double  z-10 relative my-20'>
                 <GiLinkedRings  className='w-[7rem] h-[7rem] bg-white border-4 border-black border-double m-auto rounded-full p-8 -mt-14' />
                 <h3 className='text-center font-sans text-white text-3xl  my-10'>AKAD NIKAH</h3>
-                <div className='flex justify-center items-center italic text-white text-3xl w-[90%] mx-auto text-center'>
+                <div className='flex justify-center items-center italic text-white text-3xl w-[90%] mx-auto'>
                     <p className='w-[30%] text-xl p-1'>Minggu</p>
                     <div className='border-x-2 text-center px-4 w-[30%] '>
                         <p>10</p>
-                        <p className='text-xl'>Okt</p>
+                        <p>Okt</p>
                     </div>
-                    <p  className='w-[30%] p-1 text-xl '>2024</p>
+                    <p  className='w-[30%] p-1'>2024</p>
                 </div>
                 <div className='text-center text-white w-2/3 m-auto my-10'>
                     <p>Pukul : 08.00 -selesai</p>
@@ -42,13 +42,13 @@ export default function Page6() {
             <div className='w-[90%] m-auto bg-black bg-opacity-30 rounded-3xl border-4 border-double  z-10 relative my-32'>
                 <FaPeopleRoof  className='w-[7rem] h-[7rem] bg-white border-4 border-black border-double m-auto rounded-full p-8 -mt-14' />
                 <h3 className='text-center font-sans text-white text-3xl  my-10'>RESEPSI</h3>
-                <div className='flex justify-center items-center italic text-white text-3xl w-[90%] mx-auto text-center'>
-                    <p className='w-[30%] text-xl p-1'>Selasa</p>
+                <div className='flex justify-center items-center italic text-white text-3xl w-[90%] mx-auto'>
+                    <p className='w-[30%] p-1'>Selasa</p>
                     <div className='border-x-2 text-center px-4 w-[30%] '>
                         <p>12</p>
-                        <p className='text-xl'>Okt</p>
+                        <p>Okt</p>
                     </div>
-                    <p  className='w-[30%] p-1 text-xl'>2024</p>
+                    <p  className='w-[30%] p-1'>2024</p>
                 </div>
                 <div className='text-center text-white w-2/3 m-auto my-10'>
                     <p>Pukul : 08.00 -selesai</p>
