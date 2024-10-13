@@ -1,18 +1,50 @@
-
+'use client'
+import { useEffect, useState } from 'react';
 import style from './style.module.css'
+import { useRouter } from 'next/navigation';
 
 export default function Hero() {
+    const [isHidden, setIsHidden] = useState(true)
+    const router = useRouter()
+
     const Btn = () =>{
-        
+        // e.preventDefault()
+        setIsHidden(false)
+        // router.push('/page2.js')
+
     }
+    useEffect(() => {
+
+        const handleResize = () => {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`)
+        }
+        handleResize()
+        window.scrollTo(0,0)
+        window.addEventListener('resize', handleResize)
+
+        if(isHidden){
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'auto'
+        }
+
+        return() => {
+            // window.scro
+            window.removeEventListener('resize',handleResize);
+            document.body.style.overflow = '';
+
+        }
+        // return () => 
+    },[isHidden])
     return(
-    <section className={`${style.bgSection} h-[100dvh] w-full relative overflow-x-hidden flex justify-center items-center`}>
-        <div className="z-10 text-center text-white bg-white bg-opacity-25 font-sans flex-col items-center w-3/4  py-20 rounded-full border border-white ">
+    <section className={`${style.bgSection} h-[calc(var(--vh, 1vh) * 100)] w-full relative overflow-x-hidden flex justify-center items-center overflow-hidden`} id='wrap'>
+        <div className="z-10 text-center text-white bg-white bg-opacity-25 font-sans flex-col items-center w-3/4  py-20 rounded-full border border-white overflow-y-hidden ">
             <p className="tracking-widest pb-5 ">Wedding Invitation</p>
             <h2 className="sacramento text-[3rem] font-bold leading-10 py-10 text-orange-950" style={{textShadow:'1px 1px white'}}>Dilan <br/>&<br/>Milea</h2>
             <p className="">Kepada Yth.</p>
             <h3 className="py-3 ">Tamu Undangan</h3>
-            <button  className="bg-black rounded-md text-white py-2 px-4 mt-4">Buka Undangan</button>
+            <button onClick={Btn}  className="bg-black rounded-md text-white py-2 px-4 mt-4">Buka Undangan</button>
         </div>
     </section>
     );
