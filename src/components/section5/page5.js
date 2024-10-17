@@ -7,7 +7,7 @@ export default function Page5() {
         <section className='bg-slate-950' >
             <div className='text-center text-white py-20'>
                 <Img className='fill-current w-full h-[10%]'/>
-                <p className='px-10 pt-10'>{`"Semoga cinta yang kalian bangun hari ini senantiasa tumbuh,
+                <p className='px-10 pt-10 text-sm italic'>{`"Semoga cinta yang kalian bangun hari ini senantiasa tumbuh,
                  mengakar kuat, dan membawa kedamaian serta kebahagiaan di setiap
                   langkah perjalanan hidup bersama."`}
                 </p>

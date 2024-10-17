@@ -38,9 +38,9 @@ export default function Hero() {
         // return () => 
     },[isHidden])
     return(
-    <section className={`${style.bgSection} h-[calc(var(--vh, 1vh) * 100)] w-full relative overflow-x-hidden flex justify-center items-center overflow-hidden`} id='wrap'>
-        <div className="z-10 text-center text-white bg-white bg-opacity-25 font-sans flex-col items-center w-3/4  py-20 rounded-full border border-white overflow-y-hidden ">
-            <p className="tracking-widest pb-5 ">Wedding Invitation</p>
+    <section className={`${style.bgSection}  w-full relative overflow-x-hidden flex justify-center items-center overflow-hidden`} id='wrap'>
+        <div className="z-10 text-center text-white bg-white bg-opacity-25 font-sans flex-col items-center w-3/4  py-20 rounded-full border-4 border-double  border-white overflow-y-hidden ">
+            <p className="tracking-widest italic pb-5 ">Wedding Invitation</p>
             <h2 className="sacramento text-[3rem] font-bold leading-10 py-10 text-orange-950" style={{textShadow:'1px 1px white'}}>Dilan <br/>&<br/>Milea</h2>
             <p className="">Kepada Yth.</p>
             <h3 className="py-3 ">Tamu Undangan</h3>

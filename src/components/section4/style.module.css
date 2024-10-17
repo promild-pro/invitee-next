@@ -1,6 +1,7 @@
 .bg{
     background-image: url('/assets/img/bird.jpg');
-    height: 200vh;
+    height: 200auto;
+    padding-bottom: 10%;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -9,7 +10,7 @@
     content: "";
     background-color: rgba(0, 0, 0, 0.4);
     position: absolute;
-    height: 200vh;
+    height: 100%;
     width: 100%;
     /* z-index: 1; */
     top: 0;

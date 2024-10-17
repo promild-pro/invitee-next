@@ -10,7 +10,7 @@ export default function Page8() {
             <div className="w-1/2 rounded-xl m-auto border-4 border-double  ">
                 <Image src={ImgCouple} alt='' />
             </div>
-            <div className='text-white text-center py-2 px-3  font-sans '>
+            <div className='text-white text-center py-5 px-7 italic  font-sans text-sm '>
                 <p>
                     Merupakan suatu kebahagiaan dan kehormatan bagi kami,
                     apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan doa restu kepada kami.<br/>

@@ -12,12 +12,12 @@ import Link from 'next/link';
 export default function Page4(){
     return(
         <section className={style.bg} >
-            <div className='text-center text-white z-10 relative px-5 py-10 font-serif text-xl '>
-                <p className='p-2 font-bold '>Assalamualaikum wr. wb.</p>
+            <div className='text-center text-white z-10 relative px-5 py-10 font-serif text-sm '>
+                <p className='p-2 font-bold text-xl '>Assalamualaikum wr. wb.</p>
                 <p>Dengan memohon ramat Allah SWT. dan dengan segenap kerendahan hati.
                     perkanankanla kami mengundang Bapak/Ibu Saudara/i untuk hadir di acara pernikahan kami : </p>
             </div>
-            <div className='bg-black bg-opacity-25 w-[90%] p-2 my-20 m-auto z-10 relative rounded-3xl'>
+            <div className='bg-black bg-opacity-25 w-[90%] p-2  m-auto z-10 relative rounded-3xl'>
                 <div className='bg-black bg-opacity-20 border-double border-4  rounded-3xl m-auto'>
                     <div>
                         <div className='w-1/2 m-auto rounded-full border-4 border-black border-double bg-white my-10 '>
@@ -25,7 +25,7 @@ export default function Page4(){
                         </div>
                         <div className='text-center text-white  py-5'>
                             <h3 className='sacramento text-5xl font-bold'>Dilan</h3>
-                            <p className='leading-4'>Putra Pertama dari<br/> Bapak Lorem dan Ibu Ipsum </p>
+                            <p className='leading-4 text-sm'>Putra Pertama dari<br/> Bapak Lorem dan Ibu Ipsum </p>
                         </div>
                         
                         <div className='w-16 text-white flex justify-around m-auto'>
@@ -50,7 +50,7 @@ export default function Page4(){
                         </div>
                         <div className='text-center text-white  py-5'>
                             <h3 className='sacramento text-5xl font-bold'>Milea</h3>
-                            <p className='leading-4'>Putra Pertama dari<br/> Bapak Lorem dan Ibu Ipsum </p>
+                            <p className='leading-4 text-sm'>Putri Pertama dari<br/> Bapak Lorem dan Ibu Ipsum </p>
                         </div>
                         <div className='w-16 text-white flex justify-around m-auto'>
                             <Link href='' className=' ' >

@@ -28,11 +28,11 @@ export default function Page6() {
                     </div>
                     <p  className='w-[30%] p-1 text-xl '>2024</p>
                 </div>
-                <div className='text-center text-white w-2/3 m-auto my-10'>
+                <div className='text-center text-white text-sm w-2/3 m-auto my-10'>
                     <p>Pukul : 08.00 -selesai</p>
-                    <ImLocation2  className=' text-3xl my-5 m-auto'/>
+                    <ImLocation2  className=' my-5 m-auto'/>
                     <p className='font-bold my-2'>Bertempat di:</p>
-                    <p className=''>Jl. Medokan Asri Utara No.39, Medokan Ayu, Kec. Rungkut, Surabaya, Jawa Timur 60295</p>
+                    <p className='text-sm'>Jl. Medokan Asri Utara No.39, Medokan Ayu, Kec. Rungkut, Surabaya, Jawa Timur 60295</p>
                     <Link href='https://maps.app.goo.gl/HTX9SdwgY35qR7ePA' className="bg-black flex justify-center items-center border-white border rounded-lg w-3/4 m-auto p-2 my-10 " >
                         <GrLocationPin />
                         Open Location
@@ -50,9 +50,9 @@ export default function Page6() {
                     </div>
                     <p  className='w-[30%] p-1 text-xl'>2024</p>
                 </div>
-                <div className='text-center text-white w-2/3 m-auto my-10'>
+                <div className='text-center text-white text-sm w-2/3 m-auto my-10'>
                     <p>Pukul : 08.00 -selesai</p>
-                    <ImLocation2  className=' text-3xl my-5 m-auto'/>
+                    <ImLocation2  className='my-5 m-auto'/>
                     <p className='font-bold my-2'>Bertempat di:</p>
                     <p className=''>Jl. Medokan Asri Utara No.39, Medokan Ayu, Kec. Rungkut, Surabaya, Jawa Timur 60295</p>
                     <Link href='https://maps.app.goo.gl/HTX9SdwgY35qR7ePA' className="bg-black flex justify-center items-center border-white border rounded-lg w-3/4 m-auto p-2 my-10 " >

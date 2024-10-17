@@ -9,7 +9,7 @@ export default function Page3 (){
             <div className="text-white pt-10">
                 <ImgAnimation className='fill-current w-full h-[10%]'  />
             </div>
-            <div className='text-center px-5 mt-20 text-white text-lg font-sans italic '>
+            <div className='text-center px-5 mt-20 text-white text-sm font-sans italic '>
                 <p>{`"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri,
                  supaya kamu merasa tenteram kepadanya, 
                  dan Dia menjadikan di antaramu rasa kasih dan sayang.

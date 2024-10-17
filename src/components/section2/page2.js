@@ -26,25 +26,25 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
         <div style={{  fontSize: '2rem', textAlign: 'center' }} className="flex mx-7 p-2 justify-between">
         {/* <div className="  h-auto">{days} <p className="text-sm ">Hari</p></div> */}
         <div className="border rounded-lg bg-white bg-opacity-15 w-[4rem] h-[3.5rem]  flex justify-center items-center">
-             <div className="leading-6">
+             <div className="leading-6 text-xl font-bold">
                 {days}
                 <p className="text-sm">Hari</p>
              </div>
         </div>
         <div className="border rounded-lg bg-white bg-opacity-15 w-[4rem] h-[3.5rem]  flex justify-center items-center">
-             <div className="leading-6">
+             <div className="leading-6 text-xl font-bold">
                 {hours}
                 <p className="text-sm">Jam</p>
              </div>
         </div>
         <div className="border rounded-lg bg-white bg-opacity-15 w-[4rem] h-[3.5rem]  flex justify-center items-center">
-             <div className="leading-6">
+             <div className="leading-6 text-xl font-bold">
                 {minutes}
                 <p className="text-sm">menit</p>
              </div>
         </div>
         <div className="border rounded-lg bg-white bg-opacity-15 w-[4rem] h-[3.5rem]  flex justify-center items-center">
-             <div className="leading-6">
+             <div className="leading-6 text-xl font-bold">
                 {seconds}
                 <p className="text-sm">Detik</p>
              </div>
