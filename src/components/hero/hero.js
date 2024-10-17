@@ -10,6 +10,7 @@ export default function Hero() {
     const Btn = () =>{
         // e.preventDefault()
         setIsHidden(false)
+        document.getElementsByClassName('bg.Section').style.height = '100vh'
         // router.push('/page2.js')
 
     }
