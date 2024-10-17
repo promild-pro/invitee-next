@@ -2,15 +2,24 @@
 import { useEffect, useState } from 'react';
 import style from './style.module.css'
 import { useRouter } from 'next/navigation';
+// import PropType from 'prop-types' 
+import PropTypes from 'prop-types';
 
-export default function Hero() {
+export default function Hero({handleClickProps}) {
     const [isHidden, setIsHidden] = useState(true)
     const router = useRouter()
 
     const Btn = () =>{
         // e.preventDefault()
         setIsHidden(false)
-        document.getElementsByClassName('bg.Section').style.height = '100vh'
+        // document.getElementsByClassName('bg.Section'). = '100vh'
+        const sectionElement = document.querySelector(`.${style.bgSection} `);
+        if (sectionElement) {
+            sectionElement.style.height = '100vh'
+        }
+        handleClickProps();
+
+
         // router.push('/page2.js')
 
     }
@@ -49,4 +58,7 @@ export default function Hero() {
         </div>
     </section>
     );
+}
+Hero.propTypes = {
+    handleClickProps: PropTypes.func.isRequired
 }

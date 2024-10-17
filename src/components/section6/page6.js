@@ -1,20 +1,46 @@
+'use client'
 import { GiLinkedRings } from "react-icons/gi";
 import { ImLocation2 } from "react-icons/im";
 import { GrLocationPin } from "react-icons/gr";
 import { FaPeopleRoof, FaGift } from "react-icons/fa6";
 import { RiBankCardFill } from "react-icons/ri";
 import { FaRegCopy } from "react-icons/fa";
-
-
-
-
-
-
 import style from './style.module.css'
 import Link from "next/link";
+import { useState } from "react";
 
 
 export default function Page6() {
+    const [copied, setCopied] = useState(false)
+    const [copied2, setCopied2] = useState(false)
+    const rekening1 = '21210797xxxx'
+    const rekening2 = '86897688xxxx'
+
+    const copyRekening1 = () => {
+        navigator.clipboard.writeText(rekening1)
+        .then(()=> {
+            setCopied(true)
+            setTimeout(() => {
+                setCopied(false)
+            }, 3000);
+        }).catch(err => {
+            console.log('coppied error',err);
+            
+        })
+    }
+    const copyRekening2 = () => {
+        navigator.clipboard.writeText(rekening2)
+        .then(() => {
+            setCopied2(true)
+            setTimeout(() => {
+                setCopied2(false)
+            }, 3000);
+        }).catch(err => {
+            console.log('copied error', err);
+            
+        })
+    }
+
     return(
         <section className={style.bg}>
             <div className='w-[90%] m-auto bg-black bg-opacity-30 rounded-3xl border-4 border-double  z-10 relative my-20'>
@@ -77,10 +103,13 @@ export default function Page6() {
                                 <h3 className="pl-2">BCA</h3>
                             </div>
                             <div className="m-auto w-[90%] pb-5">
-                                <p className="text-slate-700">6796586xxxxx a. n. Dilan</p>
-                                <button className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto ">
+                                <p className="text-slate-700 text-sm">{rekening1} a. n. Dilan</p>
+                                <button 
+                                className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto "
+                                onClick={copyRekening1}
+                                >
                                     <FaRegCopy />
-                                    <p className="pl-2">Salin Nomor</p>
+                                    <p className="pl-2">{copied ? 'succes' : 'copy'}</p>
                                 </button>
                             </div>
                         </div>
@@ -93,10 +122,13 @@ export default function Page6() {
                                 <h3 className="pl-2">DANA</h3>
                             </div>
                             <div className="m-auto w-[90%] pb-5">
-                                <p className="text-slate-700">6796586xxxxx a. n. Dilan</p>
-                                <button className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto ">
+                                <p className="text-slate-700 text-sm">{rekening2} a. n. Dilan</p>
+                                <button 
+                                className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto "
+                                onClick={copyRekening2}
+                                >
                                     <FaRegCopy />
-                                    <p className="pl-2">Salin Nomor</p>
+                                    <p className="pl-2">{copied2? 'succes' : 'copy'}</p>
                                 </button>
                             </div>
                         </div>

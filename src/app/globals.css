@@ -29,6 +29,9 @@ body {
   }
 }
 
+htmk{
+  scroll-behavior: smooth;
+}
 
 .sacramento{
   font-family: 'Sacramento', cursive;
