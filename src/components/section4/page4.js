@@ -20,8 +20,8 @@ export default function Page4(){
             <div className='bg-black bg-opacity-25 w-[90%] p-2  m-auto z-10 relative rounded-3xl'>
                 <div className='bg-black bg-opacity-20 border-double border-4  rounded-3xl m-auto'>
                     <div>
-                        <div className='w-1/2 m-auto rounded-full border-4 border-black border-double bg-white my-10 '>
-                            <Image src={ImgMen} alt='img-men' className='h-[14rem] ' />
+                        <div className='w-56 h-56 overflow-hidden m-auto rounded-full border-4 border-black border-double bg-white my-10 '>
+                            <Image src={ImgMen} alt='img-men' className='' />
                         </div>
                         <div className='text-center text-white  py-5'>
                             <h3 className='sacramento text-5xl font-bold'>Dilan</h3>
@@ -30,10 +30,10 @@ export default function Page4(){
                         
                         <div className='w-16 text-white flex justify-around m-auto'>
                             <Link href='' className=' ' >
-                                <GrInstagram className=' text-lg bg-white bg-opacity-15' />
+                                <GrInstagram className=' text-sm bg-white bg-opacity-15' />
                             </Link>
                             <Link href='' className=' ' >
-                                <RiFacebookCircleLine className=' text-lg border  rounded-md bg-white bg-opacity-15 ' />
+                                <RiFacebookCircleLine className=' text-sm border  rounded-md bg-white bg-opacity-15 ' />
                             </Link>
                         </div>
                     </div>
@@ -45,8 +45,8 @@ export default function Page4(){
                     </div>
 
                     <div className='pb-10'>
-                        <div className='w-1/2 m-auto rounded-full border-4 border-black border-double bg-white my-10'>
-                            <Image src={ImgGrils} alt='img-men' className='h-[14rem]' />
+                        <div className='w-56 h-56 overflow-hidden m-auto rounded-full border-4 border-black border-double bg-white my-10'>
+                            <Image src={ImgGrils} alt='img-men' className='' />
                         </div>
                         <div className='text-center text-white  py-5'>
                             <h3 className='sacramento text-5xl font-bold'>Milea</h3>
@@ -54,10 +54,10 @@ export default function Page4(){
                         </div>
                         <div className='w-16 text-white flex justify-around m-auto'>
                             <Link href='' className=' ' >
-                                <GrInstagram className=' text-lg bg-white bg-opacity-15' />
+                                <GrInstagram className=' text-sm bg-white bg-opacity-15' />
                             </Link>
                             <Link href='' className=' ' >
-                                <RiFacebookCircleLine className=' text-lg border  rounded-md bg-white bg-opacity-15 ' />
+                                <RiFacebookCircleLine className=' text-sm border  rounded-md bg-white bg-opacity-15 ' />
                             </Link>
                         </div>
                     </div>
