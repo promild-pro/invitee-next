@@ -56,34 +56,15 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
 };
 
 const handleSaveDate = () => {
-  const icsData = `
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Your Organization//NONSGML v1.0//EN
-BEGIN:VEVENT
-UID:12345678@example.com
-DTSTAMP:${new Date().toISOString().replace(/-|:|\.\d\d\d/g,"")}
-DTSTART:${wedingDate.toISOString().replace(/-|:|\.\d\d\d/g,"")}
-DTEND:${new Date(wedingDate.getTime() + 2 * 60 * 60 * 1000).toISOString().replace(/-|:|\.\d\d\d/g,"")}  <!-- 2 jam durasi acara -->
-SUMMARY:Wedding of Dilan & Milea
-DESCRIPTION:Join us in celebrating the wedding of Dilan & Milea.
-LOCATION:Bojonegoro, Indonesia
-END:VEVENT
-END:VCALENDAR
-  `;
+  const startDate = wedingDate.toISOString().replace(/-|:|\.\d\d\d/g,"").split(".")[0] + "Z"; // format UTC
+  const endDate = new Date(wedingDate.getTime() + 2 * 60 * 60 * 1000).toISOString().replace(/-|:|\.\d\d\d/g,"").split(".")[0] + "Z"; // 2 jam setelah acara
+  const eventTitle = "Wedding of Dilan & Milea";
+  const eventDetails = "Join us in celebrating the wedding of Dilan & Milea.";
+  const eventLocation = "Bojonegoro, Indonesia";
 
-  // Membuat file .ics
-  const blob = new Blob([icsData], { type: 'text/calendar' });
-  const url = URL.createObjectURL(blob);
-
-  // Membuat tautan download
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = 'save-the-date.ics';
-  link.click();
-
-  // Membersihkan URL
-  URL.revokeObjectURL(url);
+  const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}`;
+  
+  window.open(calendarUrl, '_blank');
 };
 
     return(
