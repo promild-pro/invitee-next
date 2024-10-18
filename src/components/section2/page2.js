@@ -6,7 +6,7 @@ import { useEffect,useState } from "react"
 import style from "./style.module.css"
 import Countdown from 'react-countdown'
 import { FaRegCalendarCheck } from "react-icons/fa6";
-import Hero from "../hero/hero";
+// import Hero from "../hero/hero";
 
 
 
@@ -54,18 +54,9 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
   }
 };
 
-const handleClick = () => {
-  const selectId = document.getElementById('page2')
-  if (selectId) {
-    selectId.scrollIntoView({behavior: 'smooth'})
-  }
 
-}
     return(
       <section>
-        <section>
-          <Hero handleClickProps={handleClick} />
-        </section>
         <section className={style.bg} id="page2">
             <div className="absolute bottom-0 flex-row justify-center w-full items-center">
                 <div className="text-white  z-10 text-center relative ">
