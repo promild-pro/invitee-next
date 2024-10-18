@@ -12,6 +12,7 @@ import { FaRegCalendarCheck } from "react-icons/fa6";
 
 export default function Page2 (){
     const [isClient, setIsClient] = useState(false);
+    const wedingDate =  new Date('2024-12-31T10:00:00')
 
     useEffect(() => {
       setIsClient(true);
@@ -54,6 +55,36 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
   }
 };
 
+const handleSaveDate = () => {
+  const icsData = `
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Your Organization//NONSGML v1.0//EN
+BEGIN:VEVENT
+UID:12345678@example.com
+DTSTAMP:${new Date().toISOString().replace(/-|:|\.\d\d\d/g,"")}
+DTSTART:${wedingDate.toISOString().replace(/-|:|\.\d\d\d/g,"")}
+DTEND:${new Date(wedingDate.getTime() + 2 * 60 * 60 * 1000).toISOString().replace(/-|:|\.\d\d\d/g,"")}  <!-- 2 jam durasi acara -->
+SUMMARY:Wedding of Dilan & Milea
+DESCRIPTION:Join us in celebrating the wedding of Dilan & Milea.
+LOCATION:Bojonegoro, Indonesia
+END:VEVENT
+END:VCALENDAR
+  `;
+
+  // Membuat file .ics
+  const blob = new Blob([icsData], { type: 'text/calendar' });
+  const url = URL.createObjectURL(blob);
+
+  // Membuat tautan download
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'save-the-date.ics';
+  link.click();
+
+  // Membersihkan URL
+  URL.revokeObjectURL(url);
+};
 
     return(
       <section>
@@ -64,11 +95,14 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
                     <h3 className="sacramento font-bold text-5xl py-5">Dilan & Milea</h3>
                     <div>
                     {isClient && <Countdown
-                        date={new Date('2024-12-31T00:00:00')}
+                        date={wedingDate}
                         renderer={renderer}
                     />}
                     </div>
-                    <button className="bg-white bg-opacity-40 p-2 mx-auto my-5 font-bold text-xl italic flex justify-center items-center rounded-lg" >
+                    <button 
+                    className="bg-white bg-opacity-40 p-2 mx-auto my-5 font-bold text-xl italic flex justify-center items-center rounded-lg" 
+                    onClick={handleSaveDate}
+                    >
                       <FaRegCalendarCheck className="mr-3" />
                       Save The Date
                     </button>
