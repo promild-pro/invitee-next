@@ -15,11 +15,11 @@ export default function Hero() {
         setIsHidden(false)
         document.body.style.overflow = 'auto'
         setTimeout(() => {
-            const sectionElement = document.querySelector(`.${style.bgSection}`);
+            // const sectionElement = document.querySelector(`.${style.bgSection}`);
             const selectId = document.getElementById('page2');
       
-            if (sectionElement && selectId) {
-              sectionElement.style.height = '100vh';
+            if (selectId) {
+            //   sectionElement.style.height = '100vh';
               selectId.scrollIntoView({ behavior: 'smooth' });  // Scroll setelah delay
             }
           }, 100); 
@@ -33,7 +33,7 @@ export default function Hero() {
             document.documentElement.style.setProperty('--vh', `${vh}px`)
         }
         handleResize()
-        window.addEventListener('resize', handleResize)
+        // window.addEventListener('resize', handleResize)
         // document.body.style.overflow = 'hidden'
 
         if(isHidden){
@@ -43,7 +43,7 @@ export default function Hero() {
         }
 
         return() => {
-            window.removeEventListener('resize',handleResize);
+            // window.removeEventListener('resize',handleResize);
             document.body.style.overflow = '';
 
         }

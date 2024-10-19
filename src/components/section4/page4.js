@@ -28,7 +28,7 @@ export default function Page4(){
                             <p className='leading-4 text-sm'>Putra Pertama dari<br/> Bapak Lorem dan Ibu Ipsum </p>
                         </div>
                         
-                        <div className='w-16 text-white flex justify-around m-auto'>
+                        <div className='w-10 text-white flex justify-around m-auto'>
                             <Link href='' className=' ' >
                                 <GrInstagram className=' text-sm bg-white bg-opacity-15' />
                             </Link>
@@ -52,7 +52,7 @@ export default function Page4(){
                             <h3 className='sacramento text-5xl font-bold'>Milea</h3>
                             <p className='leading-4 text-sm'>Putri Pertama dari<br/> Bapak Lorem dan Ibu Ipsum </p>
                         </div>
-                        <div className='w-16 text-white flex justify-around m-auto'>
+                        <div className='w-10 text-white flex justify-around m-auto'>
                             <Link href='' className=' ' >
                                 <GrInstagram className=' text-sm bg-white bg-opacity-15' />
                             </Link>
