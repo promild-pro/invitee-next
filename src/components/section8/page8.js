@@ -6,7 +6,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export default function Page8() {
     return(
-        <section className="bg-slate-950 h-full py-20">
+        <section className="bg-slate-950  py-20">
             <div className="w-1/2 rounded-xl m-auto border-4 border-double  ">
                 <Image src={ImgCouple} alt='' />
             </div>

@@ -86,7 +86,7 @@ export default function Hero() {
                 <div className='text-blue-700 '>
                     <GiSelfLove className='text-9xl animate-bounce' />
                     <h1 className='text-center text-3xl flex items-center justify-center'>Wait... 
-                    <svg
+                    {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="25"
                         height="25"
@@ -96,7 +96,7 @@ export default function Hero() {
                     >
                         <circle cx="50" cy="50" r="45" stroke="#f3f3f3" strokeWidth="5" />
                         <circle cx="50" cy="50" r="45" stroke="#3498db" strokeWidth="5" strokeDasharray="100" strokeDashoffset="75" className="animate-loader" />
-                    </svg>
+                    </svg> */}
                      </h1>
                 {/* <div className="flex justify-center items-center h-screen"> */}
                     
@@ -126,10 +126,10 @@ export default function Hero() {
         <section id='page2'>
             <Page2 data={weddingData}/>
             <Page3 />
-            <Page4 />
+            <Page4 data={weddingData} />
             <Page5 />
-            <Page6 />
-            <Page7 />
+            <Page6 data={weddingData} />
+            <Page7 data={weddingData} />
             <Page8 />
         </section>
         

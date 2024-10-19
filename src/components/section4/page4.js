@@ -6,10 +6,12 @@ import { GrInstagram } from "react-icons/gr";
 import { RiFacebookCircleLine } from "react-icons/ri";
 
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 
 
 
-export default function Page4(){
+export default function Page4({data}){
+    
     return(
         <section className={style.bg} >
             <div className='text-center text-white z-10 relative px-5 py-10 font-serif text-sm '>
@@ -24,8 +26,8 @@ export default function Page4(){
                             <Image src={ImgMen} alt='img-men' className='' />
                         </div>
                         <div className='text-center text-white  py-5'>
-                            <h3 className='sacramento text-5xl font-bold'>Dilan</h3>
-                            <p className='leading-4 text-sm'>Putra Pertama dari<br/> Bapak Lorem dan Ibu Ipsum </p>
+                            <h3 className='sacramento text-5xl font-bold'>{data?.name?.mens}</h3>
+                            <p className='leading-4 text-sm'>Putra dari<br/> Bapak {data?.parent?.mens} dan Ibu {data?.parent?.grils}</p>
                         </div>
                         
                         <div className='w-10 text-white flex justify-around m-auto'>
@@ -49,8 +51,8 @@ export default function Page4(){
                             <Image src={ImgGrils} alt='img-men' className='' />
                         </div>
                         <div className='text-center text-white  py-5'>
-                            <h3 className='sacramento text-5xl font-bold'>Milea</h3>
-                            <p className='leading-4 text-sm'>Putri Pertama dari<br/> Bapak Lorem dan Ibu Ipsum </p>
+                            <h3 className='sacramento text-5xl font-bold'>{data?.name?.grils}</h3>
+                            <p className='leading-4 text-sm'>Putri dari<br/> Bapak {data?.parent?.mens} dan Ibu {data?.parent?.grils} </p>
                         </div>
                         <div className='w-10 text-white flex justify-around m-auto'>
                             <Link href='' className=' ' >
@@ -66,4 +68,7 @@ export default function Page4(){
             </div>
         </section>
     )
+}
+Page4.propTypes ={
+    data:PropTypes.string.isRequired
 }

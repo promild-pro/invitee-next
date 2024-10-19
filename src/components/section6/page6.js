@@ -8,13 +8,14 @@ import { FaRegCopy } from "react-icons/fa";
 import style from './style.module.css'
 import Link from "next/link";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 
-export default function Page6() {
+export default function Page6({data}) {
     const [copied, setCopied] = useState(false)
     const [copied2, setCopied2] = useState(false)
-    const rekening1 = '21210797xxxx'
-    const rekening2 = '86897688xxxx'
+    const rekening1 = data?.gift?.bri
+    const rekening2 = data?.gift?.dana
 
     const copyRekening1 = () => {
         navigator.clipboard.writeText(rekening1)
@@ -47,19 +48,23 @@ export default function Page6() {
                 <GiLinkedRings  className='w-[7rem] h-[7rem] bg-white border-4 border-black border-double m-auto rounded-full p-8 -mt-14' />
                 <h3 className='text-center font-sans text-white text-3xl  my-10'>AKAD NIKAH</h3>
                 <div className='flex justify-center items-center italic text-white text-3xl w-[90%] mx-auto text-center'>
-                    <p className='w-[30%] text-xl p-1'>Minggu</p>
+                    {/* Hari */}
+                    <p className='w-[30%] text-xl p-1'>{data?.date?.akad?.day}</p>
                     <div className='border-x-2 text-center px-4 w-[30%] '>
-                        <p>10</p>
-                        <p className='text-xl'>Okt</p>
+                        {/* Tanggal */}
+                        <p>{data?.date?.akad?.date}</p>
+                        {/* Bulan  */}
+                        <p className='text-xl'>{data?.date?.akad?.mount}</p>
                     </div>
-                    <p  className='w-[30%] p-1 text-xl '>2024</p>
+                    {/* Tahun  */}
+                    <p  className='w-[30%] p-1 text-xl '>{data?.date?.years}</p>
                 </div>
                 <div className='text-center text-white text-sm w-2/3 m-auto my-10'>
-                    <p>Pukul : 08.00 -selesai</p>
+                    <p>Pukul : {data?.date?.akad?.time} -selesai</p>
                     <ImLocation2  className=' my-5 m-auto'/>
                     <p className='font-bold my-2'>Bertempat di:</p>
-                    <p className='text-sm'>Jl. Medokan Asri Utara No.39, Medokan Ayu, Kec. Rungkut, Surabaya, Jawa Timur 60295</p>
-                    <Link href='https://maps.app.goo.gl/HTX9SdwgY35qR7ePA' className="bg-black flex justify-center items-center border-white border rounded-lg w-3/4 m-auto p-2 my-10 " >
+                    <p className='text-sm'>{data?.location?.akad?.location}</p>
+                    <Link href={`${data?.location?.akad?.link}`} className="bg-black flex justify-center items-center border-white border rounded-lg w-3/4 m-auto p-2 my-10 " >
                         <GrLocationPin />
                         Open Location
                     </Link>
@@ -69,19 +74,19 @@ export default function Page6() {
                 <FaPeopleRoof  className='w-[7rem] h-[7rem] bg-white border-4 border-black border-double m-auto rounded-full p-8 -mt-14' />
                 <h3 className='text-center font-sans text-white text-3xl  my-10'>RESEPSI</h3>
                 <div className='flex justify-center items-center italic text-white text-3xl w-[90%] mx-auto text-center'>
-                    <p className='w-[30%] text-xl p-1'>Selasa</p>
+                    <p className='w-[30%] text-xl p-1'>{data?.date?.resepsi?.day}</p>
                     <div className='border-x-2 text-center px-4 w-[30%] '>
-                        <p>12</p>
-                        <p className='text-xl'>Okt</p>
+                        <p>{data?.date?.resepsi?.date}</p>
+                        <p className='text-xl'>{data?.date?.resepsi?.mount}</p>
                     </div>
-                    <p  className='w-[30%] p-1 text-xl'>2024</p>
+                    <p  className='w-[30%] p-1 text-xl'>{data?.date?.years}</p>
                 </div>
                 <div className='text-center text-white text-sm w-2/3 m-auto my-10'>
-                    <p>Pukul : 08.00 -selesai</p>
+                    <p>Pukul : {data?.date?.resepsi?.time} -selesai</p>
                     <ImLocation2  className='my-5 m-auto'/>
                     <p className='font-bold my-2'>Bertempat di:</p>
-                    <p className=''>Jl. Medokan Asri Utara No.39, Medokan Ayu, Kec. Rungkut, Surabaya, Jawa Timur 60295</p>
-                    <Link href='https://maps.app.goo.gl/HTX9SdwgY35qR7ePA' className="bg-black flex justify-center items-center border-white border rounded-lg w-3/4 m-auto p-2 my-10 " >
+                    <p className=''>{data?.location?.resepsi?.location}</p>
+                    <Link href={`${data?.location?.resepsi?.location}`}className="bg-black flex justify-center items-center border-white border rounded-lg w-3/4 m-auto p-2 my-10 " >
                         <GrLocationPin />
                         Open Location
                     </Link>
@@ -136,4 +141,7 @@ export default function Page6() {
             </div>
         </section>
     )
+}
+Page6.propTypes = {
+    data: PropTypes.string.isRequired
 }
