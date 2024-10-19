@@ -25,11 +25,11 @@ const database = getDatabase(app)
 const fetchWeddingData = async (id) => {
     const dbRef = ref(database);
     try {
-        const snapshot = await get(child(dbRef, `01`))
-        if (snapshot.exists()) {
-            return snapshot.val()
+        const data = await get(child(dbRef, id))
+        if (data.exists()) {
+            return data.val()
         } else {
-            console.log('eror', );
+            console.log('eror' );
             return null
         }
     } catch (error) {

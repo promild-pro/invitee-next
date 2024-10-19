@@ -1,18 +1,18 @@
-// 'use client'
 'use client'
-
-
 import { useEffect,useState } from "react"
 import style from "./style.module.css"
 import Countdown from 'react-countdown'
 import { FaRegCalendarCheck } from "react-icons/fa6";
-// import Hero from "../hero/hero";
+import  PropTypes from 'prop-types'
 
 
-
-export default function Page2 (){
+export default function Page2 ({data}){
+  
     const [isClient, setIsClient] = useState(false);
-    const wedingDate =  new Date('2024-12-31T10:00:00')
+    const WeddingDay = data?.dateAll?.date
+    // console.log(WeddingDay);
+    
+    const wedingDate =  new Date(`${WeddingDay}T10:00:00`)
 
     useEffect(() => {
       setIsClient(true);
@@ -58,8 +58,8 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
 const handleSaveDate = () => {
   const startDate = wedingDate.toISOString().replace(/-|:|\.\d\d\d/g,"").split(".")[0] + "Z"; // format UTC
   const endDate = new Date(wedingDate.getTime() + 2 * 60 * 60 * 1000).toISOString().replace(/-|:|\.\d\d\d/g,"").split(".")[0] + "Z"; // 2 jam setelah acara
-  const eventTitle = "Wedding of Dilan & Milea";
-  const eventDetails = "Join us in celebrating the wedding of Dilan & Milea.";
+  const eventTitle = `Wedding of ${data?.Name?.mens} & ${data?.Name?.grils}`;
+  const eventDetails = `Join us in celebrating the wedding of ${data?.Name?.mens} & ${data?.Name?.grils}.`;
   const eventLocation = "Bojonegoro, Indonesia";
 
   const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}`;
@@ -73,7 +73,8 @@ const handleSaveDate = () => {
             <div className="absolute bottom-0 flex-row justify-center w-full items-center">
                 <div className="text-white  z-10 text-center relative ">
                     <p>The Wedding Of</p>
-                    <h3 className="sacramento font-bold text-5xl py-5">Dilan & Milea</h3>
+                    <h3 className="sacramento font-bold text-5xl py-5">
+                      {data?.name?.mens} & {data?.name?.grils}</h3>
                     <div>
                     {isClient && <Countdown
                         date={wedingDate}
@@ -92,4 +93,8 @@ const handleSaveDate = () => {
         </section>
       </section>  
     )
+}
+
+Page2.propTypes = {
+  data: PropTypes.string.isRequired
 }
