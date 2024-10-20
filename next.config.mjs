@@ -8,6 +8,15 @@ const nextConfig = {
     
         return config;
       },
+
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/:id',  // Menangkap ID setelah '/'
+  //       destination: '/[id]',  // Tetap di halaman utama '/'
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;

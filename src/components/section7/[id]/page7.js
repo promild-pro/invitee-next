@@ -1,17 +1,17 @@
-
+'use client'
 import ImgAnimation from '@/assets/img/animate/flower.svg'
-import style from './style.module.css'
-import { database } from '../firebase/initialFirebase'
+import style from '../style.module.css'
+import { database } from '../../firebase/initialFirebase'
 import { ref, set, onValue } from 'firebase/database'
 import { useState,useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 
-export default function Page7({data}) {
+export default function Page7({params}) {
     // const router = useRouter()
-    // const { id } = router.query; 
+    // const { end } = router.query; 
+    // const {id} = params
     const id = '1'
-    // const
     const [name, setName] = useState("")
     const [message, setMessage] = useState("")
     const [ucapan, setUcapan] = useState([])
@@ -25,10 +25,6 @@ export default function Page7({data}) {
         })
         setName("")
         setMessage("")
-        // e.preventDefault()
-        // if (name.trim() && message.trim()) {
-            
-        // }
     }
     useEffect(() => {
         const messagesRef = ref(database, `${id}/ucapan`); // referensi untuk mengambil ucapan

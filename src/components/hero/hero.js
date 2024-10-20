@@ -9,15 +9,16 @@ import Page3 from '../section3/page3';
 import Page4 from '../section4/page4';
 import Page5 from '../section5/page5';
 import Page6 from '../section6/page6';
-import Page7 from '../section7/page7';
+import Page7 from '../section7/[id]/page7';
 import Page8 from '../section8/page8';
 import { GiSelfLove } from "react-icons/gi";
+import PropTypes from 'prop-types';
 
 
 
-export default function Hero() {
-    const router = useRouter()
-    const id = '1'
+
+export default function Hero({id}) {
+
     const [weddingData, setWeddingData] = useState([])
     // console.log(weddingData);
     
@@ -41,7 +42,7 @@ export default function Hero() {
 
     useEffect(() => {
         const getData = async () => {
-            const data = await fetchWeddingData(id)
+            const data = await fetchWeddingData(id?.id)
             setWeddingData(data)
             setLoading(false)
             // if (data) {
@@ -135,4 +136,8 @@ export default function Hero() {
         
         </main>
     );
+}
+
+Hero.propTypes = {
+    id: PropTypes.string.isRequired
 }
