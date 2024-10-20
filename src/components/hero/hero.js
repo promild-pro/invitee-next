@@ -17,8 +17,9 @@ import PropTypes from 'prop-types';
 
 
 
-export default function Hero({id}) {
-
+export default function Hero({id, name}) {
+    console.log(name);
+    
     const [weddingData, setWeddingData] = useState([])
     // console.log(weddingData);
     
@@ -115,7 +116,7 @@ export default function Hero({id}) {
                     {weddingData?.name?.grils}
                 </h2>
                 <p className="">Kepada Yth.</p>
-                <h3 className="py-3 ">Tamu Undangan</h3>
+                <h3 className="py-2 text-xl text-white font-bold " style={{ textShadow: '2px 2px black' }}>{name.namaTamu}</h3>
                 <button onClick={btnElement} className="bg-slate-950 shadow-md border border-white shadow-slate-300 rounded-md flex justify-center items-center w-1/2 text-white py-1 px-4 mt-4 mx-auto">
                     <FaEnvelopeOpen size={15} className='mr-2' />
                     Open
@@ -139,5 +140,6 @@ export default function Hero({id}) {
 }
 
 Hero.propTypes = {
-    id: PropTypes.string.isRequired
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
 }
