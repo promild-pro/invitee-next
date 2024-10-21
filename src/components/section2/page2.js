@@ -4,6 +4,7 @@ import style from "./style.module.css"
 import Countdown from 'react-countdown'
 import { FaRegCalendarCheck } from "react-icons/fa6";
 import  PropTypes from 'prop-types'
+import AnimatedSection from "@/animation/animateToUp/animate";
 
 
 export default function Page2 ({data}){
@@ -69,7 +70,9 @@ const handleSaveDate = () => {
     return(
       <section>
         <section className={style.bg} id="page2">
-            <div className="absolute bottom-0 flex-row justify-center w-full items-center">
+            {/* <div className="relative h-[100vh] z-40"> */}
+            <div className=" absolute bottom-0 flex-row justify-center w-full items-center">
+          <AnimatedSection>
                 <div className="text-white  z-10 text-center relative ">
                     <p>The Wedding Of</p>
                     <h3 className="sacramento font-bold text-5xl py-5">
@@ -88,7 +91,10 @@ const handleSaveDate = () => {
                       Save The Date
                     </button>
                 </div>
+            </AnimatedSection>
             </div>
+            {/* </div> */}
+ 
         </section>
       </section>  
     )

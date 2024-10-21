@@ -56,3 +56,17 @@ htmk{
     width: 75%;
   }
 }
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animate-up {
+  animation: fadeIn 0.8s ease-out forwards;;
+}

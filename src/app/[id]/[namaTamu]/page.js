@@ -7,7 +7,8 @@ export default function IdPage() {
   const  idUrl  = useParams()// Tangkap ID dari URL
   const Tamu = useParams()
   const id = idUrl?.id
-  const namaTamu = Tamu?.namaTamu
+  // const namaTamu = decodeURIComponent(Tamu?.namaTamu || "");
+  const namaTamu = Tamu?.namaTamu?.replace(/_/g, ' ') || ""
 
   return (
     <section>

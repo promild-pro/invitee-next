@@ -9,6 +9,8 @@ import style from './style.module.css'
 import Link from "next/link";
 import { useState } from "react";
 import PropTypes from "prop-types";
+import AnimatedSection from "@/animation/animateToUp/animate";
+import AnimateSee from "@/animation/animateSee/page";
 
 
 export default function Page6({data}) {
@@ -44,7 +46,9 @@ export default function Page6({data}) {
 
     return(
         <section className={style.bg}>
+            <AnimatedSection>
             <div className='w-[90%] m-auto bg-black bg-opacity-30 rounded-3xl border-4 border-double  z-10 relative my-20'>
+                <AnimateSee>
                 <GiLinkedRings  className='w-[7rem] h-[7rem] bg-white border-4 border-black border-double m-auto rounded-full p-8 -mt-14' />
                 <h3 className='text-center font-sans text-white text-3xl  my-10'>AKAD NIKAH</h3>
                 <div className='flex justify-center items-center italic text-white text-3xl w-[90%] mx-auto text-center'>
@@ -69,8 +73,12 @@ export default function Page6({data}) {
                         Open Location
                     </Link>
                 </div>
+                </AnimateSee>
             </div>
+            </AnimatedSection>
+            <AnimatedSection>
             <div className='w-[90%] m-auto bg-black bg-opacity-30 rounded-3xl border-4 border-double  z-10 relative my-32'>
+                <AnimateSee>
                 <FaPeopleRoof  className='w-[7rem] h-[7rem] bg-white border-4 border-black border-double m-auto rounded-full p-8 -mt-14' />
                 <h3 className='text-center font-sans text-white text-3xl  my-10'>RESEPSI</h3>
                 <div className='flex justify-center items-center italic text-white text-3xl w-[90%] mx-auto text-center'>
@@ -91,8 +99,12 @@ export default function Page6({data}) {
                         Open Location
                     </Link>
                 </div>
+                </AnimateSee>
             </div>
+            </AnimatedSection>
+            <AnimatedSection>
             <div className='w-[90%] m-auto bg-black bg-opacity-70 rounded-3xl border-4 border-double  z-10 relative my-32'>
+                <AnimateSee>
                 <div  className='w-[7rem] h-[7rem] bg-white border-4 border-black border-double m-auto rounded-full text-lg p-8 -mt-14'>
                 <FaGift className='text-3xl m-auto' />
                 </div>
@@ -138,7 +150,9 @@ export default function Page6({data}) {
                             </div>
                         </div>
                     </div>
+                    </AnimateSee>
             </div>
+            </AnimatedSection>
         </section>
     )
 }
