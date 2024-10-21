@@ -137,7 +137,7 @@ export default function Hero({id, name}) {
             <Page4 data={weddingData} />
             <Page5 />
             <Page6 data={weddingData} />
-            <Page7 data={weddingData} />
+            <Page7 data={weddingData} id={id} />
             <Page8 />
         </section>
         
