@@ -13,6 +13,7 @@ import Page7 from '../section7/page7';
 import Page8 from '../section8/page8';
 import { GiSelfLove } from "react-icons/gi";
 import PropTypes from 'prop-types';
+import BubbleAnimation from '@/animation/buble/page';
 
 
 
@@ -114,9 +115,9 @@ export default function Hero({id, name}) {
         ):
         (
             <section className={`${style.bgSection}  w-full relative overflow-x-hidden flex justify-center items-center overflow-hidden`} id='wrap'>
-            <div className="z-10 text-center text-white bg-white bg-opacity-25 font-sans flex-col items-center w-3/4  py-20 rounded-full border-4 border-double  border-white overflow-y-hidden ">
+            <div className="expandload z-10 text-center text-white bg-white bg-opacity-25 font-sans flex-col items-center w-3/4  py-20 rounded-full border-4 border-double  border-white overflow-y-hidden ">
                 <p className="tracking-widest italic pb-5 ">Wedding Invitation</p>
-                <h2 className="sacramento text-[3rem] font-extrabold leading-10 py-10 text-orange-950" style={{ textShadow: '1px 1px white' }}>
+                <h2 className="sacramento text-[3rem] font-extrabold  p-5 leading-[3.5rem]  text-orange-950" style={{ textShadow: '1px 1px white' }}>
                     {weddingData?.name?.mens}
                     <br />&<br />
                     {weddingData?.name?.grils}
@@ -128,6 +129,7 @@ export default function Hero({id, name}) {
                     Open
                 </button>
             </div>
+            <BubbleAnimation />
         </section>
         )
         }

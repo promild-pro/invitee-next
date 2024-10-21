@@ -108,7 +108,7 @@ export default function Page6({data}) {
                                 <h3 className="pl-2">BCA</h3>
                             </div>
                             <div className="m-auto w-[90%] pb-5">
-                                <p className="text-slate-700 text-sm">{rekening1} a. n. Dilan</p>
+                                <p className="text-slate-700 text-sm">{rekening1} a. n. {data?.name?.mens}</p>
                                 <button 
                                 className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto "
                                 onClick={copyRekening1}
@@ -127,7 +127,7 @@ export default function Page6({data}) {
                                 <h3 className="pl-2">DANA</h3>
                             </div>
                             <div className="m-auto w-[90%] pb-5">
-                                <p className="text-slate-700 text-sm">{rekening2} a. n. Dilan</p>
+                                <p className="text-slate-700 text-sm">{rekening2} a. n. {data?.name?.grils}</p>
                                 <button 
                                 className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto "
                                 onClick={copyRekening2}

@@ -5,13 +5,9 @@ import { database } from '../firebase/initialFirebase'
 import { ref, set, onValue } from 'firebase/database'
 import { useState,useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { useRouter } from 'next/router'
 
 export default function Page7({id}) {
-    // const router = useRouter()
-    // const { end } = router.query; 
-    // const {id} = params
-    // const id = '1'
+
     const [name, setName] = useState("")
     const [message, setMessage] = useState("")
     const [ucapan, setUcapan] = useState([])
@@ -64,8 +60,9 @@ export default function Page7({id}) {
                         onChange={(e) => setMessage(e.target.value)}
                         />
                     <button 
-                        className='px-2 py-1  bg-black rounded-md text-white'
+                        className={`px-2 py-1  bg-black rounded-md text-white ${message === '' || name === '' ? 'opacity-70' : 'opacity-100'}`}
                         // onClick={handleSend}
+                        disabled ={message === '' || name === '' ? true : false}
                         type='submit'
                         >
                         Kirim
@@ -73,7 +70,7 @@ export default function Page7({id}) {
                     <div className='my-5 mx-2 h-[17rem]  border-2 border-double rounded-md p-1  overflow-y-scroll'>
                         {/* <p>Ucapan seseorang</p> */}
                         {ucapan.map((msg) => (
-                            <p key={msg.id}>
+                            <p key={msg.id} className='py-1 border-b-2 '>
                                 <strong>{msg.name}:</strong> {msg.text}
                             </p>
                         ))}

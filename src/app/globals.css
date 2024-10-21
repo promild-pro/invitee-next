@@ -36,3 +36,23 @@ htmk{
 .sacramento{
   font-family: 'Sacramento', cursive;
 }
+
+/* Class untuk elemen dengan animasi width */
+.expandload {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  animation: expandWidth 1.5s ease-in-out forwards; /* Animasi otomatis saat load */
+}
+
+/* Keyframes untuk animasi dari width 0% ke 100% */
+@keyframes expandWidth {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    height: 85%;
+    width: 75%;
+  }
+}
