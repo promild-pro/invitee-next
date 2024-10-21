@@ -1,17 +1,17 @@
 'use client'
 import ImgAnimation from '@/assets/img/animate/flower.svg'
-import style from '../style.module.css'
-import { database } from '../../firebase/initialFirebase'
+import style from './style.module.css'
+import { database } from '../firebase/initialFirebase'
 import { ref, set, onValue } from 'firebase/database'
 import { useState,useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
 
-export default function Page7({params}) {
+export default function Page7({id}) {
     // const router = useRouter()
     // const { end } = router.query; 
     // const {id} = params
-    const id = '1'
+    // const id = '1'
     const [name, setName] = useState("")
     const [message, setMessage] = useState("")
     const [ucapan, setUcapan] = useState([])
@@ -84,5 +84,5 @@ export default function Page7({params}) {
     )
 }
 Page7.propTypes = {
-    data: PropTypes.string.isRequired
+    id: PropTypes.string
 }

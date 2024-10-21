@@ -9,7 +9,7 @@ import Page3 from '../section3/page3';
 import Page4 from '../section4/page4';
 import Page5 from '../section5/page5';
 import Page6 from '../section6/page6';
-import Page7 from '../section7/[id]/page7';
+import Page7 from '../section7/page7';
 import Page8 from '../section8/page8';
 import { GiSelfLove } from "react-icons/gi";
 import PropTypes from 'prop-types';
@@ -18,11 +18,12 @@ import PropTypes from 'prop-types';
 
 
 export default function Hero({id, name}) {
+
     console.log(name);
     
     const [weddingData, setWeddingData] = useState([])
     // console.log(weddingData);
-    
+    const [namaTamu, setNamaTamu] = useState('')
     const [isHidden, setIsHidden] = useState(true)
     const [loading, setLoading] = useState(true)
 
@@ -43,7 +44,7 @@ export default function Hero({id, name}) {
 
     useEffect(() => {
         const getData = async () => {
-            const data = await fetchWeddingData(id?.id)
+            const data = await fetchWeddingData(id)
             setWeddingData(data)
             setLoading(false)
             // if (data) {
@@ -53,6 +54,12 @@ export default function Hero({id, name}) {
             // }
         }
         getData()
+        if (name) {
+            // const Tamu = name.namaTamu
+            setNamaTamu(name)
+        } else {
+            setNamaTamu('Nama Tamu')
+        }
     },[id])
     useEffect(() => {
 
@@ -116,7 +123,7 @@ export default function Hero({id, name}) {
                     {weddingData?.name?.grils}
                 </h2>
                 <p className="">Kepada Yth.</p>
-                <h3 className="py-2 text-xl text-white font-bold " style={{ textShadow: '2px 2px black' }}>{name.namaTamu}</h3>
+                <h3 className="py-2 text-xl text-white font-bold" style={{ textShadow: '2px 2px black' }}>{namaTamu}</h3>
                 <button onClick={btnElement} className="bg-slate-950 shadow-md border border-white shadow-slate-300 rounded-md flex justify-center items-center w-1/2 text-white py-1 px-4 mt-4 mx-auto">
                     <FaEnvelopeOpen size={15} className='mr-2' />
                     Open

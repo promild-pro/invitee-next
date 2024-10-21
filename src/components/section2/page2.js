@@ -58,8 +58,8 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
 const handleSaveDate = () => {
   const startDate = wedingDate.toISOString().replace(/-|:|\.\d\d\d/g,"").split(".")[0] + "Z"; // format UTC
   const endDate = new Date(wedingDate.getTime() + 2 * 60 * 60 * 1000).toISOString().replace(/-|:|\.\d\d\d/g,"").split(".")[0] + "Z"; // 2 jam setelah acara
-  const eventTitle = `Wedding of ${data?.Name?.mens} & ${data?.Name?.grils}`;
-  const eventDetails = `Join us in celebrating the wedding of ${data?.Name?.mens} & ${data?.Name?.grils}.`;
+  const eventTitle = `Wedding of ${data?.name?.mens} & ${data?.name?.grils}`;
+  const eventDetails = `Join us in celebrating the wedding of ${data?.name?.mens} & ${data?.name?.grils}.`;
   const eventLocation = "Bojonegoro, Indonesia";
 
   const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}`;

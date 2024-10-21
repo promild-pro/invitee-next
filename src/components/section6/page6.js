@@ -86,7 +86,7 @@ export default function Page6({data}) {
                     <ImLocation2  className='my-5 m-auto'/>
                     <p className='font-bold my-2'>Bertempat di:</p>
                     <p className=''>{data?.location?.resepsi?.location}</p>
-                    <Link href={`${data?.location?.resepsi?.location}`}className="bg-black flex justify-center items-center border-white border rounded-lg w-3/4 m-auto p-2 my-10 " >
+                    <Link href={`${data?.location?.resepsi?.link}`}className="bg-black flex justify-center items-center border-white border rounded-lg w-3/4 m-auto p-2 my-10 " >
                         <GrLocationPin />
                         Open Location
                     </Link>
