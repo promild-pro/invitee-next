@@ -70,7 +70,7 @@ export default function Page7({id}) {
                         >
                         Kirim
                     </button>
-                    <div className='py-5 h-[17rem] overflow-y-scroll'>
+                    <div className='my-5 mx-2 h-[17rem]  border-2 border-double rounded-md p-1  overflow-y-scroll'>
                         {/* <p>Ucapan seseorang</p> */}
                         {ucapan.map((msg) => (
                             <p key={msg.id}>

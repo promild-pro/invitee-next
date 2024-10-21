@@ -94,7 +94,7 @@ export default function Hero({id, name}) {
                 {/* <h1>loading...!</h1> */}
                 <div className='text-blue-700 '>
                     <GiSelfLove className='text-9xl animate-bounce' />
-                    <h1 className='text-center text-3xl flex items-center justify-center'>Wait... 
+                    <h1 className='text-center text-3xl flex items-center justify-center pt-10'>Wait... </h1> 
                     {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="25"
@@ -106,7 +106,6 @@ export default function Hero({id, name}) {
                         <circle cx="50" cy="50" r="45" stroke="#f3f3f3" strokeWidth="5" />
                         <circle cx="50" cy="50" r="45" stroke="#3498db" strokeWidth="5" strokeDasharray="100" strokeDashoffset="75" className="animate-loader" />
                     </svg> */}
-                     </h1>
                 {/* <div className="flex justify-center items-center h-screen"> */}
                     
                 {/* </div> */}

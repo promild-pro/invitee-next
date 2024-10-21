@@ -10,7 +10,6 @@ export default function Page2 ({data}){
   
     const [isClient, setIsClient] = useState(false);
     const WeddingDay = data?.dateAll?.date
-    // console.log(WeddingDay);
     
     const wedingDate =  new Date(`${WeddingDay}T10:00:00`)
 

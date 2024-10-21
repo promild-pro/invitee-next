@@ -12,7 +12,7 @@ export default function IdPage() {
   return (
     <section>
       <Hero id={id} name={namaTamu} />  {/* Kirim ID ke komponen Hero */}
-      <Page7 id={id} />
+      {/* <Page7 id={id} /> */}
     </section>
   );
 }

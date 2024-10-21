@@ -1,7 +1,7 @@
 .bg{
     width: 90%;
     background-image: url('/assets/img/bird.jpg');
-    height: 100vh;
+    height: auto;
     margin: auto;
     background-size: cover;
     background-position: left;
