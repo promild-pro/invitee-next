@@ -32,8 +32,8 @@ export default function Page4({data}){
                                     <Image src={ImgMen} alt='img-men' className='' />
                                 </div>
                                 <div className='text-center text-white  py-5'>
-                                    <h3 className='sacramento text-5xl font-bold'>{data?.name?.mens}</h3>
-                                    <p className='leading-4 text-sm'>Putra dari<br/> Bapak {data?.parent?.mens} dan Ibu {data?.parent?.grils}</p>
+                                    <h3 className='sacramento text-3xl font-bold'>{data?.namaLengkap?.mens}</h3>
+                                    <p className='leading-4 text-sm'>Putra dari<br/> Bapak {data?.parent?.mens?.parentMens} dan Ibu {data?.parent?.mens?.parentGrils}</p>
                                 </div>
                                 
                                 <div className='w-10 text-white flex justify-around m-auto'>
@@ -59,8 +59,8 @@ export default function Page4({data}){
                                 <Image src={ImgGrils} alt='img-men' className='' />
                             </div>
                             <div className='text-center text-white  py-5'>
-                                <h3 className='sacramento text-5xl font-bold'>{data?.name?.grils}</h3>
-                                <p className='leading-4 text-sm'>Putri dari<br/> Bapak {data?.parent?.mens} dan Ibu {data?.parent?.grils} </p>
+                                <h3 className='sacramento text-3xl font-bold'>{data?.namaLengkap?.grils}</h3>
+                                <p className='leading-4 text-sm'>Putri dari<br/> Bapak {data?.parent?.grils?.parentMens} dan Ibu {data?.parent?.grils?.parentGrils} </p>
                             </div>
                             <div className='w-10 text-white flex justify-around m-auto'>
                                 <Link href='' className=' ' >

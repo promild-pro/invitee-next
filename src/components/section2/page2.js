@@ -10,7 +10,7 @@ import AnimatedSection from "@/animation/animateToUp/animate";
 export default function Page2 ({data}){
   
     const [isClient, setIsClient] = useState(false);
-    const WeddingDay = data?.dateAll?.date
+    const WeddingDay = data?.date?.dateAll
     
     const wedingDate =  new Date(`${WeddingDay}T10:00:00`)
 
@@ -71,7 +71,7 @@ const handleSaveDate = () => {
       <section>
         <section className={style.bg} id="page2">
             {/* <div className="relative h-[100vh] z-40"> */}
-            <div className=" absolute bottom-0 flex-row justify-center w-full items-center">
+            <div className=" absolute bottom-5 flex-row justify-center w-full items-center">
           <AnimatedSection>
                 <div className="text-white  z-10 text-center relative ">
                     <p>The Wedding Of</p>

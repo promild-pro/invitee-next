@@ -16,7 +16,7 @@ import AnimateSee from "@/animation/animateSee/page";
 export default function Page6({data}) {
     const [copied, setCopied] = useState(false)
     const [copied2, setCopied2] = useState(false)
-    const rekening1 = data?.gift?.bri
+    const rekening1 = data?.gift?.noBank
     const rekening2 = data?.gift?.dana
 
     const copyRekening1 = () => {
