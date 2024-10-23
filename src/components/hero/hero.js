@@ -29,17 +29,20 @@ export default function Hero({id, name}) {
     const [namaTamu, setNamaTamu] = useState('')
     const [isHidden, setIsHidden] = useState(true)
     const [loading, setLoading] = useState(true)
+    const [bgToggle, setBgTogle] = useState('bg-black')
 
-    const bgToggle = document.getElementById('bgToggle');
+    // const bgToggle = document.getElementById('bgToggle');
     const toggleMusic = () => {
         const audio = document.getElementById('weddingMusic');
         if (audio.paused) {
           audio.play();
-          bgToggle.style.backgroundColor = 'black'
+          setBgTogle('bg-black')
+        //   bgToggle.style.backgroundColor = 'black'
         } else {
           audio.pause();
+          setBgTogle('bg-red-600')
         //   bgToggle.className = 'bg-red'
-        bgToggle.style.backgroundColor = 'red'
+        // bgToggle.style.backgroundColor = 'red'
 
         }
       };
@@ -132,7 +135,7 @@ export default function Hero({id, name}) {
             </section>
         ):
         (
-            <section className={`${style.bgSection} z-30 w-full relative overflow-x-hidden flex justify-center items-center overflow-hidden`} id='wrap'>
+            <section className={`${style.bgSection}  z-30 w-full relative overflow-x-hidden flex justify-center items-center overflow-hidden`} id='wrap'>
             <div className="expandload z-10 text-center text-white bg-white bg-opacity-25 font-sans flex-col items-center w-3/4  py-20 rounded-full border-4 border-double  border-white overflow-y-hidden ">
                 <p className="tracking-widest italic pb-5 ">Wedding Invitation</p>
                 <h2 className="sacramento text-[3rem] font-extrabold  p-5 leading-[3.5rem]  text-orange-950" style={{ textShadow: '1px 1px white' }}>
@@ -153,8 +156,8 @@ export default function Hero({id, name}) {
         }
         <section id='page2' className='relative h-auto'>
             <button onClick={toggleMusic} 
-                id='bgToggle'
-                className=' w-10 h-10 rounded-full border border-white flex justify-center items-center fixed bottom-8 left-5 z-20 '>
+                // id='bgToggle'
+                className={`w-10 h-10 rounded-full border border-white flex justify-center items-center fixed bottom-8 left-5 z-20 ${bgToggle}`}>
                 <GiMusicSpell className='fill-current text-white rotate-icon' size={25} />
             </button>
             
