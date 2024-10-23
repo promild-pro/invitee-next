@@ -2,10 +2,11 @@ import Image from "next/image";
 import ImgCouple from '@/assets/img/avatarbridge.png'
 import { FaWhatsapp } from "react-icons/fa";
 import AnimateSee from "@/animation/animateSee/page";
+import PropTypes from "prop-types";
 
 
 
-export default function Page8() {
+export default function Page8({data}) {
     return(
         <section className="bg-slate-950  py-20">
             <AnimateSee>
@@ -19,7 +20,7 @@ export default function Page8() {
                         Atas do`a dan restunya kami ucapkan terima kasih  
                     </p>
                     <p className='font-bold'>Wassalamu`alaikum wr. wb.</p>
-                    <h3 className='sacramento text-3xl font-bold py-5'>Dilan & Milea</h3>
+                    <h3 className='sacramento text-3xl font-bold py-5'>{data?.name?.mens} & {data?.name?.grils}</h3>
                 </div>
             </AnimateSee>
                 <div className='pt-20 pb-10 text-white text-center m-auto'>
@@ -27,4 +28,7 @@ export default function Page8() {
                 </div>
         </section>
     )
+}
+Page8.propTypes = {
+    data: PropTypes.string.isRequired
 }

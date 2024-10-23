@@ -5,22 +5,24 @@ import { useRouter } from 'next/navigation';
 import Page2 from '../section2/page2';
 import { FaEnvelopeOpen } from "react-icons/fa";
 import { fetchWeddingData } from '../firebase/initialFirebase';
+import { GiMusicSpell } from "react-icons/gi";
+import { GiSelfLove } from "react-icons/gi";
 import Page3 from '../section3/page3';
 import Page4 from '../section4/page4';
 import Page5 from '../section5/page5';
 import Page6 from '../section6/page6';
 import Page7 from '../section7/page7';
 import Page8 from '../section8/page8';
-import { GiSelfLove } from "react-icons/gi";
 import PropTypes from 'prop-types';
 import BubbleAnimation from '@/animation/buble/page';
+import Music from '/public/assets/music/melodi-undangan.mp3'
 
 
 
 
 export default function Hero({id, name}) {
 
-    console.log(name);
+    // console.log(name);
     
     const [weddingData, setWeddingData] = useState([])
     // console.log(weddingData);
@@ -28,8 +30,22 @@ export default function Hero({id, name}) {
     const [isHidden, setIsHidden] = useState(true)
     const [loading, setLoading] = useState(true)
 
-    const btnElement = () => {
+    const bgToggle = document.getElementById('bgToggle');
+    const toggleMusic = () => {
+        const audio = document.getElementById('weddingMusic');
+        if (audio.paused) {
+          audio.play();
+          bgToggle.style.backgroundColor = 'black'
+        } else {
+          audio.pause();
+        //   bgToggle.className = 'bg-red'
+        bgToggle.style.backgroundColor = 'red'
 
+        }
+      };
+
+    const btnElement = () => {
+        toggleMusic()
         setIsHidden(false)
         document.body.style.overflow = 'auto'
         setTimeout(() => {
@@ -88,10 +104,12 @@ export default function Hero({id, name}) {
         }
 
     },[isHidden])
+
+    
     return(
         <main>
         {loading ? (
-            <section className='h-screen z-30 flex justify-center items-center bg-black w-full m-auto text-xl'>
+            <section className='h-screen relative z-30 flex justify-center items-center bg-black w-full m-auto text-xl'>
                 {/* <h1>loading...!</h1> */}
                 <div className='text-blue-700 '>
                     <GiSelfLove className='text-9xl animate-bounce' />
@@ -114,7 +132,7 @@ export default function Hero({id, name}) {
             </section>
         ):
         (
-            <section className={`${style.bgSection}  w-full relative overflow-x-hidden flex justify-center items-center overflow-hidden`} id='wrap'>
+            <section className={`${style.bgSection} z-30 w-full relative overflow-x-hidden flex justify-center items-center overflow-hidden`} id='wrap'>
             <div className="expandload z-10 text-center text-white bg-white bg-opacity-25 font-sans flex-col items-center w-3/4  py-20 rounded-full border-4 border-double  border-white overflow-y-hidden ">
                 <p className="tracking-widest italic pb-5 ">Wedding Invitation</p>
                 <h2 className="sacramento text-[3rem] font-extrabold  p-5 leading-[3.5rem]  text-orange-950" style={{ textShadow: '1px 1px white' }}>
@@ -133,15 +151,24 @@ export default function Hero({id, name}) {
         </section>
         )
         }
-        <section id='page2'>
+        <section id='page2' className='relative h-auto'>
+            <button onClick={toggleMusic} 
+                id='bgToggle'
+                className=' w-10 h-10 rounded-full border border-white flex justify-center items-center fixed bottom-8 left-5 z-20 '>
+                <GiMusicSpell className='fill-current text-white rotate-icon' size={25} />
+            </button>
+            
             <Page2 data={weddingData}/>
             <Page3 />
             <Page4 data={weddingData} />
             <Page5 />
             <Page6 data={weddingData} />
             <Page7 data={weddingData} id={id} />
-            <Page8 />
+            <Page8 data={weddingData} />
         </section>
+        <audio id='weddingMusic' className='z-50' loop>
+                <source src={Music} type='audio/mp3' />
+        </audio>
         
         </main>
     );

@@ -9,9 +9,10 @@ export default function Page5() {
             <AnimatedSection>
                 <div className='text-center text-white py-20'>
                     <Img className='fill-current w-full h-[10%]'/>
-                    <p className='px-10 pt-10 text-sm italic'>{`"Semoga cinta yang kalian bangun hari ini senantiasa tumbuh,
-                    mengakar kuat, dan membawa kedamaian serta kebahagiaan di setiap
-                    langkah perjalanan hidup bersama."`}
+                    <p className='px-10 pt-10 text-sm italic'>
+                        {`"Dengan segala kerendahan hati,
+                     kami memohon doa restu agar langkah kami menuju hidup baru ini senantiasa diberkahi oleh-Nya.
+                      Semoga pernikahan kami menjadi awal dari perjalanan penuh kebahagiaan, kesetiaan, dan cinta yang abadi."`}
                     </p>
                     <Img1 className='fill-current w-2/5 m-auto h-[10%]' />
                 </div>

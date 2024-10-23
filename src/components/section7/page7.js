@@ -13,7 +13,7 @@ export default function Page7({id}) {
     const [name, setName] = useState("")
     const [message, setMessage] = useState("")
     const [ucapan, setUcapan] = useState([])
-    console.log(ucapan);
+    // console.log(ucapan);
     
 
     const handleSend = (e) => {

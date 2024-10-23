@@ -16,9 +16,13 @@ import AnimateSee from "@/animation/animateSee/page";
 export default function Page6({data}) {
     const [copied, setCopied] = useState(false)
     const [copied2, setCopied2] = useState(false)
+    // const [gift,setGift] = useState(false)
     const rekening1 = data?.gift?.noBank
     const rekening2 = data?.gift?.dana
-
+    // const giftStatus = data?.gift?.gift
+    // if (giftStatus === true) {
+    //     setGift(true)
+    // }   
     const copyRekening1 = () => {
         navigator.clipboard.writeText(rekening1)
         .then(()=> {
@@ -103,6 +107,8 @@ export default function Page6({data}) {
             </div>
             </AnimatedSection>
             <AnimatedSection>
+            {data?.gift?.gift === true ? (
+
             <div className='w-[90%] m-auto bg-black bg-opacity-70 rounded-3xl border-4 border-double  z-10 relative my-32'>
                 <AnimateSee>
                 <div  className='w-[7rem] h-[7rem] bg-white border-4 border-black border-double m-auto rounded-full text-lg p-8 -mt-14'>
@@ -131,8 +137,7 @@ export default function Page6({data}) {
                             </div>
                         </div>
                     </div>
-
-                    <div className='w-[90%] m-auto text-white mb-2 p-2' >
+                        <div className='w-[90%] m-auto text-white mb-2 p-2' >
                         <div className="text-blue-700 bg-white rounded-xl ">
                             <div className="flex text-4xl p-5 font-bold italic">
                                 <RiBankCardFill />
@@ -150,8 +155,11 @@ export default function Page6({data}) {
                             </div>
                         </div>
                     </div>
+                    
                     </AnimateSee>
             </div>
+                    ) : null
+                }
             </AnimatedSection>
         </section>
     )

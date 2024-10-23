@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-[500px] m-auto`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-[400px] m-auto`}
       >
         {children}
       </body>
