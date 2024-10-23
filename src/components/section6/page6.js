@@ -14,39 +14,35 @@ import AnimateSee from "@/animation/animateSee/page";
 
 
 export default function Page6({data}) {
-    const [copied, setCopied] = useState(false)
-    const [copied2, setCopied2] = useState(false)
+    // const [copied2, setCopied2] = useState(false)
     // const [gift,setGift] = useState(false)
-    const rekening1 = data?.gift?.noBank
-    const rekening2 = data?.gift?.dana
+    // const rekening1 = data?.gift?.noBank
+    // const rekening2 = data?.gift?.dana
+    const dataGift = data?.giftData
+    const [copied, setCopied] = useState([])
+    // console.log(dataGift);
+    
     // const giftStatus = data?.gift?.gift
     // if (giftStatus === true) {
     //     setGift(true)
     // }   
-    const copyRekening1 = () => {
-        navigator.clipboard.writeText(rekening1)
+    const copyRekening = (noRek, index) => {
+        navigator.clipboard.writeText(noRek)
         .then(()=> {
-            setCopied(true)
+            let statusCoppy = [...copied]
+            statusCoppy[index] = true
+            setCopied(statusCoppy)
             setTimeout(() => {
-                setCopied(false)
-            }, 3000);
+                let reset = [...statusCoppy]
+                reset[index] = false
+                setCopied(reset)
+            }, 2000);
         }).catch(err => {
             console.log('coppied error',err);
             
         })
     }
-    const copyRekening2 = () => {
-        navigator.clipboard.writeText(rekening2)
-        .then(() => {
-            setCopied2(true)
-            setTimeout(() => {
-                setCopied2(false)
-            }, 3000);
-        }).catch(err => {
-            console.log('copied error', err);
-            
-        })
-    }
+    
 
     return(
         <section className={style.bg}>
@@ -107,56 +103,39 @@ export default function Page6({data}) {
             </div>
             </AnimatedSection>
             <AnimatedSection>
-            {data?.gift?.gift === true ? (
+            {data?.gift === true ? (
 
             <div className='w-[90%] m-auto bg-black bg-opacity-70 rounded-3xl border-4 border-double  z-10 relative my-32'>
                 <AnimateSee>
-                <div  className='w-[7rem] h-[7rem] bg-white border-4 border-black border-double m-auto rounded-full text-lg p-8 -mt-14'>
-                <FaGift className='text-3xl m-auto' />
-                </div>
-                <h3 className='text-center font-sans text-white text-3xl  my-10'>WEDDING GIFT</h3>
-                
-                <div className='text-center text-white w-2/3 m-auto my-10'>
-                    <p>Bagi Keluarga dan Sahabat yang ingin menirimkan hadiah, silakan menirimkannya lewat :</p>
-                </div>
-                    <div className='w-[90%] m-auto text-white p-2' >
-                        <div className="text-blue-700 bg-white rounded-xl ">
-                            <div className="flex text-4xl p-5 font-bold italic">
-                                <RiBankCardFill />
-                                <h3 className="pl-2">BCA</h3>
-                            </div>
-                            <div className="m-auto w-[90%] pb-5">
-                                <p className="text-slate-700 text-sm">{rekening1} a. n. {data?.name?.mens}</p>
-                                <button 
-                                className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto "
-                                onClick={copyRekening1}
-                                >
-                                    <FaRegCopy />
-                                    <p className="pl-2">{copied ? 'succes' : 'copy'}</p>
-                                </button>
-                            </div>
-                        </div>
+                    <div  className='w-[7rem] h-[7rem] bg-white border-4 border-black border-double m-auto rounded-full text-lg p-8 -mt-14'>
+                    <FaGift className='text-3xl m-auto' />
                     </div>
-                        <div className='w-[90%] m-auto text-white mb-2 p-2' >
-                        <div className="text-blue-700 bg-white rounded-xl ">
-                            <div className="flex text-4xl p-5 font-bold italic">
-                                <RiBankCardFill />
-                                <h3 className="pl-2">DANA</h3>
-                            </div>
-                            <div className="m-auto w-[90%] pb-5">
-                                <p className="text-slate-700 text-sm">{rekening2} a. n. {data?.name?.grils}</p>
-                                <button 
-                                className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto "
-                                onClick={copyRekening2}
-                                >
-                                    <FaRegCopy />
-                                    <p className="pl-2">{copied2? 'succes' : 'copy'}</p>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 className='text-center font-sans text-white text-3xl  my-10'>WEDDING GIFT</h3>
                     
-                    </AnimateSee>
+                    <div className='text-center text-white w-2/3 m-auto my-10'>
+                        <p>Bagi Keluarga dan Sahabat yang ingin menirimkan hadiah, silakan menirimkannya lewat :</p>
+                    </div>
+                    {dataGift.map((gft, index) => (
+                        <div key={index} className='w-[90%] m-auto text-white p-2' >
+                        <div className="text-blue-700 bg-white rounded-xl ">
+                            <div className="flex text-4xl p-5 font-bold italic">
+                                <RiBankCardFill />
+                                <h3 className="pl-2">{gft.nameBank}</h3>
+                            </div>
+                            <div className="m-auto w-[90%] pb-5">
+                                <p className="text-slate-700 text-sm">{gft.noRek} a. n. {gft.an}</p>
+                                <button 
+                                className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto "
+                                onClick={() => copyRekening(gft.noRek, index)}
+                                >
+                                    <FaRegCopy />
+                                    <p className="pl-2">{copied[index] ? 'succes' : 'copy'}</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    ))}
+                </AnimateSee>
             </div>
                     ) : null
                 }
