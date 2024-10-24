@@ -71,11 +71,11 @@ const handleSaveDate = () => {
       <section>
         <section className={style.bg} id="page2">
             {/* <div className="relative h-[100vh] z-40"> */}
-            <div className=" absolute bottom-5 flex-row justify-center w-full items-center">
+            <div className=" absolute bottom-10 flex-row justify-center w-full items-center">
           <AnimatedSection>
                 <div className="text-white  z-10 text-center relative ">
                     <p>The Wedding Of</p>
-                    <h3 className="sacramento font-bold text-5xl py-5">
+                    <h3 className="sacramento font-bold text-4xl py-5">
                       {data?.name?.mens} & {data?.name?.grils}</h3>
                     <div>
                     {isClient && <Countdown
