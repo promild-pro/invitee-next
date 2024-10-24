@@ -75,8 +75,11 @@ const handleSaveDate = () => {
           <AnimatedSection>
                 <div className="text-white  z-10 text-center relative ">
                     <p>The Wedding Of</p>
-                    <h3 className="sacramento font-bold text-4xl py-5">
-                      {data?.name?.mens} & {data?.name?.grils}</h3>
+                    <div className="sacramento font-bold text-4xl py-5 flex justify-center items-center grid-cols-3 gap-1">
+                      <h1>{data?.name?.mens}</h1>
+                       <h1 className="text-5xl px-1">&</h1> 
+                       <h1>{data?.name?.grils}</h1>
+                    </div>
                     <div>
                     {isClient && <Countdown
                         date={wedingDate}

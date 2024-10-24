@@ -7,6 +7,14 @@ import { FaEnvelopeOpen } from "react-icons/fa";
 import { fetchWeddingData } from '../firebase/initialFirebase';
 import { GiMusicSpell } from "react-icons/gi";
 import { GiSelfLove } from "react-icons/gi";
+import { ImHome } from "react-icons/im";
+import { ImInfo } from "react-icons/im";
+import { BiSolidCalendarHeart } from "react-icons/bi";
+import { HiMiniGiftTop } from "react-icons/hi2";
+import { SlSpeech } from "react-icons/sl";
+
+
+
 import Page3 from '../section3/page3';
 import Page4 from '../section4/page4';
 import Page5 from '../section5/page5';
@@ -30,6 +38,16 @@ export default function Hero({id, name}) {
     const [isHidden, setIsHidden] = useState(true)
     const [loading, setLoading] = useState(true)
     const [bgToggle, setBgTogle] = useState('bg-black')
+    const [scroll, setScroll] = useState('')
+
+
+    // const home = document.getElementById('home')
+    const togleScroll = (id) => {
+        const scrollView = document.getElementById(id)
+        if (scrollView) {
+            scrollView.scrollIntoView({behavior: 'smooth'})
+        }
+    }
 
     // const bgToggle = document.getElementById('bgToggle');
     const toggleMusic = () => {
@@ -166,16 +184,33 @@ export default function Hero({id, name}) {
         <section id='page2' className='relative h-auto'>
             <button onClick={toggleMusic} 
                 // id='bgToggle'
-                className={`w-10 h-10 rounded-full border border-white flex justify-center items-center fixed bottom-8 left-5 z-20 ${bgToggle}`}>
+                className={`w-10 h-10 rounded-full border border-white flex justify-center items-center fixed bottom-16 left-5 z-20 ${bgToggle}`}>
                 <GiMusicSpell className='fill-current text-white rotate-icon' size={25} />
             </button>
+            <diV className="fixed -bottom-1 z-20 w-full">
+                <div className=' bg-slate-800 w-[80%]  m-auto relative flex justify-between grid-cols-5 text-4xl text-white  rounded-t-xl'>
+                <button onClick={() => togleScroll('home')} className='p-2'><ImHome /></button>
+                <button onClick={() => togleScroll('couple')}  className='p-2'><ImInfo /></button>
+                <button onClick={() => togleScroll('date')}  className='p-2'><BiSolidCalendarHeart /></button>
+                <button onClick={() => togleScroll('gift')}  className='p-2'><HiMiniGiftTop /></button>
+                <button onClick={() => togleScroll('ucapan')} className='p-2'><SlSpeech /></button>
+                </div>
+            </diV>
             
-            <Page2 data={weddingData}/>
+            <div id='home'>
+                <Page2 data={weddingData}/>
+            </div>
             <Page3 />
-            <Page4 data={weddingData} />
+            <div id='couple'>
+                <Page4 data={weddingData} />
+            </div>
             <Page5 />
-            <Page6 data={weddingData} />
-            <Page7 data={weddingData} id={id} />
+            <div id='date'>
+                <Page6 data={weddingData} propsid='gift' />
+            </div>
+            <div id='ucapan'>
+                <Page7 data={weddingData} id={id}  />
+            </div>
             <Page8 data={weddingData} />
         </section>
         <audio id='weddingMusic' className='z-50' loop>

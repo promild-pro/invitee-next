@@ -15,7 +15,7 @@ import AnimatedSection from "@/animation/animateToUp/animate";
 import AnimateSee from "@/animation/animateSee/page";
 
 
-export default function Page6({data}) {
+export default function Page6({data, propsid}) {
     // const [copied2, setCopied2] = useState(false)
     // const [gift,setGift] = useState(false)
     // const rekening1 = data?.gift?.noBank
@@ -38,7 +38,7 @@ export default function Page6({data}) {
                 let reset = [...statusCoppy]
                 reset[index] = false
                 setCopied(reset)
-            }, 2000);
+            }, 1000);
         }).catch(err => {
             console.log('coppied error',err);
             
@@ -104,6 +104,7 @@ export default function Page6({data}) {
                 </AnimateSee>
             </div>
             </AnimatedSection>
+            <div id={propsid}>
             <AnimatedSection>
             {data?.gift === true ? (
 
@@ -129,6 +130,7 @@ export default function Page6({data}) {
                                 <button 
                                 className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto "
                                 onClick={() => copyRekening(gft.noRek, index)}
+                                disabled={copied[index] ? true : false}
                                 >
                                     <FaRegCopy />
                                     <p className="pl-2">{copied[index] ? 'succes' : 'copy'}</p>
@@ -142,9 +144,11 @@ export default function Page6({data}) {
                     ) : null
                 }
             </AnimatedSection>
+            </div>
         </section>
     )
 }
 Page6.propTypes = {
-    data: PropTypes.string.isRequired
+    data: PropTypes.string.isRequired,
+    propsid: PropTypes.string
 }
