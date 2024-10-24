@@ -5,6 +5,8 @@ import { GrLocationPin } from "react-icons/gr";
 import { FaPeopleRoof, FaGift } from "react-icons/fa6";
 import { RiBankCardFill } from "react-icons/ri";
 import { FaRegCopy } from "react-icons/fa";
+import { BiSolidBank } from "react-icons/bi";
+
 import style from './style.module.css'
 import Link from "next/link";
 import { useState } from "react";
@@ -119,8 +121,8 @@ export default function Page6({data}) {
                         <div key={index} className='w-[90%] m-auto text-white p-2' >
                         <div className="text-blue-700 bg-white rounded-xl ">
                             <div className="flex text-4xl p-5 font-bold italic">
-                                <RiBankCardFill />
-                                <h3 className="pl-2">{gft.nameBank}</h3>
+                                <BiSolidBank className="text-slate-950" />
+                                <h3 className="pl-2 text-3xl">{gft.nameBank}</h3>
                             </div>
                             <div className="m-auto w-[90%] pb-5">
                                 <p className="text-slate-700 text-sm">{gft.noRek} a. n. {gft.an}</p>
