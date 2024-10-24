@@ -121,14 +121,14 @@ export default function Page6({data, propsid}) {
                     {dataGift.map((gft, index) => (
                         <div key={index} className='w-[90%] m-auto text-white p-2' >
                         <div className="text-blue-700 bg-white rounded-xl ">
-                            <div className="flex text-4xl p-5 font-bold italic">
-                                <BiSolidBank className="text-slate-950" />
-                                <h3 className="pl-2 text-3xl">{gft.nameBank}</h3>
+                            <div className="flex items-centerp-5 p-2 pb-3 font-bold italic">
+                                <BiSolidBank className=" text-4xl " />
+                                <h3 className="pl-2 text-3xl text-slate-950">{gft.nameBank}</h3>
                             </div>
-                            <div className="m-auto w-[90%] pb-5">
-                                <p className="text-slate-700 text-sm">{gft.noRek} a. n. {gft.an}</p>
+                            <div className="m-auto p-2">
+                                <p className="text-slate-700 text-sm italic">{gft.noRek} a. n. {gft.an}</p>
                                 <button 
-                                className="flex bg-black p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto "
+                                className="flex bg-slate-900 p-1 rounded-lg text-white w-full justify-center items-center my-2 m-auto "
                                 onClick={() => copyRekening(gft.noRek, index)}
                                 disabled={copied[index] ? true : false}
                                 >

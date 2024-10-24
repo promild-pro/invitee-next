@@ -24,6 +24,7 @@ import Page8 from '../section8/page8';
 import PropTypes from 'prop-types';
 import BubbleAnimation from '@/animation/buble/page';
 import Music from '/public/assets/music/melodi-undangan.mp3'
+import AnimateSee from '@/animation/animateSee/page';
 
 
 
@@ -164,6 +165,7 @@ export default function Hero({id, name}) {
         (
             <section className={`${style.bgSection}  z-30 w-full relative overflow-x-hidden flex justify-center items-center overflow-hidden`} id='wrap'>
             <div className="expandload z-10 text-center text-white bg-white bg-opacity-25 font-sans flex-col items-center w-3/4  py-20 rounded-full border-4 border-double  border-white overflow-y-hidden ">
+                <AnimateSee>
                 <p className="tracking-widest italic pb-5 ">Wedding Invitation</p>
                 <h2 className="sacramento text-[3rem] font-extrabold  p-5 leading-[3.5rem]  text-orange-950" style={{ textShadow: '1px 1px white' }}>
                     {weddingData?.name?.mens}
@@ -176,6 +178,7 @@ export default function Hero({id, name}) {
                     <FaEnvelopeOpen size={15} className='mr-2' />
                     Open
                 </button>
+                </AnimateSee>
             </div>
             <BubbleAnimation />
         </section>
