@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
       {/* <Head> */}
       {/* </Head> */}
       <head>
-        <link rel="icon" href="/og-icons.png" />
+        <link rel="icon" href="/icons.jpeg" />
       <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet" />
       </head>
       <body
