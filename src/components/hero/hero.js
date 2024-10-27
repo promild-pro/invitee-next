@@ -164,7 +164,7 @@ export default function Hero({id, name}) {
         ):
         (
             <section className={`${style.bgSection}  z-30 w-full relative overflow-x-hidden flex justify-center items-center overflow-hidden`} id='wrap'>
-            <div className="expandload z-10 text-center text-white bg-white bg-opacity-25 font-sans flex-col items-center w-3/4  py-20 rounded-full border-4 border-double  border-white overflow-y-hidden ">
+            <div className="expandload z-10 text-center text-white bg-white bg-opacity-15 font-sans flex justify-center items-center w-3/4  py-20 rounded-full border-4 border-double  border-white overflow-y-hidden ">
                 <AnimateSee>
                 <p className="tracking-widest italic pb-5 ">Wedding Invitation</p>
                 <h2 className="sacramento text-[3rem] font-extrabold  p-5 leading-[3.5rem]  text-orange-950" style={{ textShadow: '1px 1px white' }}>
@@ -191,7 +191,7 @@ export default function Hero({id, name}) {
                 <GiMusicSpell className='fill-current text-white rotate-icon' size={25} />
             </button>
             <diV className="fixed -bottom-1 z-20 w-full">
-                <div className=' bg-slate-800 w-[80%]  m-auto relative flex justify-between grid-cols-5 text-4xl text-white  rounded-t-xl'>
+                <div className=' bg-black border border-white  bg-opacity-15 w-[80%]  m-auto relative flex justify-between grid-cols-5 text-4xl text-white  rounded-t-xl'>
                 <button onClick={() => togleScroll('home')} className='p-2'><ImHome /></button>
                 <button onClick={() => togleScroll('couple')}  className='p-2'><ImInfo /></button>
                 <button onClick={() => togleScroll('date')}  className='p-2'><BiSolidCalendarHeart /></button>

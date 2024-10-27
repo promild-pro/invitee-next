@@ -7,7 +7,7 @@ import ImgAnimation2 from "@/assets/img/animate/flower1.svg"
 
 export default function Page3 (){
     return(
-        <section className='bg-slate-950'>
+        <section className='bg-[#12300efa]'>
             <AnimatedSection>
             <div className="text-white pt-10">
                 <ImgAnimation className='fill-current w-full h-[10%]'  />

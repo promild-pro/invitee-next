@@ -39,7 +39,7 @@ export default function Page7({id}) {
         });
     }, [id]);
     return(
-        <section className="bg-slate-950 py-5  overflow-hidden">
+        <section className="bg-[#12300efa] py-5  overflow-hidden">
             <AnimatedSection>
                 <div className={style.bg}>
                     <div className="w-full text-white text-center h-20 z-10  relative">

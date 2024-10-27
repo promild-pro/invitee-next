@@ -5,7 +5,7 @@ import Img1 from '@/assets/img/animate/flower1.svg'
 
 export default function Page5() {
     return(
-        <section className='bg-slate-950' >
+        <section className='bg-[#12300efa]' >
             <AnimatedSection>
                 <div className='text-center text-white py-20'>
                     <Img className='fill-current w-full h-[10%]'/>

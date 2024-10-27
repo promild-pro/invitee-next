@@ -1,9 +1,10 @@
 .bg{
-    background-image: url('/assets/img/couple_end.png');
+    background-image: url('/assets/img/couple-image.png');
     background-size: cover;
     height: 100vh;
     /* width: 100%; */
     overflow: hidden;
+    background-color: rgb(151, 199, 103);
     background-position: center;
     filter:drop-shadow( 2px 6px 2px black);
     position: relative;
