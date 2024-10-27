@@ -39,10 +39,9 @@ export default function Hero({id, name}) {
     const [isHidden, setIsHidden] = useState(true)
     const [loading, setLoading] = useState(true)
     const [bgToggle, setBgTogle] = useState('bg-black')
-    const [scroll, setScroll] = useState('')
+    const [visible, setVisible] = useState(false)
 
 
-    // const home = document.getElementById('home')
     const togleScroll = (id) => {
         const scrollView = document.getElementById(id)
         if (scrollView) {
@@ -86,19 +85,17 @@ export default function Hero({id, name}) {
             const data = await fetchWeddingData(id)
             setWeddingData(data)
             setLoading(false)
-            // if (data) {
-            //     console.log("Data berhasil diambil:", data.Name.mens);
-            // } else {
-            //     console.log("Data tidak ditemukan");
-            // }
         }
         getData()
-        // if (name) {
-        //     // const Tamu = name.namaTamu
-        //     setNamaTamu(name)
-        // } else {
-        //     setNamaTamu('Nama Tamu')
-        // }
+        const checkScreen = () => {
+            if(window.innerWidth > 400){
+                setVisible(!visible)
+            }
+
+        } 
+        checkScreen()
+        window.addEventListener('resize', checkScreen)
+        return () => window.removeEventListener('resize', checkScreen)
     },[id])
     useEffect(() => {
 
@@ -109,8 +106,6 @@ export default function Hero({id, name}) {
             document.documentElement.style.setProperty('--vh', `${vh}px`)
         }
         handleResize()
-        // window.addEventListener('resize', handleResize)
-        // document.body.style.overflow = 'hidden'
 
         if(isHidden){
             document.body.style.overflow = 'hidden'
@@ -120,7 +115,6 @@ export default function Hero({id, name}) {
 
        
         return() => {
-            // window.removeEventListener('resize',handleResize);
             document.body.style.overflow = '';
 
         }
@@ -130,92 +124,100 @@ export default function Hero({id, name}) {
     
     return(
         <main>
-        {loading ? (
-            <section className='h-screen relative z-30 flex justify-center items-center bg-black w-full m-auto text-xl'>
-                {/* <h1>loading...!</h1> */}
-                    
-                {/* <div className='text-blue-700 '>
-                    <GiSelfLove className='text-9xl animate-bounce' />
-                    <h1 className='text-center text-3xl flex items-center justify-center pt-10'>Wait... </h1> 
-             
-                </div> */}
-                <div className='absolute  m-auto z-30'>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="75"
-                        height="75"
-                        viewBox="0 0 100 100"
-                        fill="none"
-                        className={style.loader}
-                    >
-                        <circle cx="50" cy="50" r="45" stroke="#00000" strokeWidth="5" />
-                        <circle cx="50" cy="50" r="45" stroke="#3498db" strokeWidth="5" strokeDasharray="100" strokeDashoffset="75" className="animate-loader" />
-                    </svg>
-                    <h1 className=' text-blue-900 z-50 text-2xl mt-5 '>wait ...</h1>
-                </div>
-                <div className={style.bubbleContainer}>
-                    <div className={style.bubble}></div>
-                    <div className={style.bubble}></div>
-                    <div className={style.bubble}></div>
-                    <div className={style.bubble}></div>
-                    <div className={style.bubble}></div>
-                </div>
-            </section>
-        ):
-        (
-            <section className={`${style.bgSection}  z-30 w-full relative overflow-x-hidden flex justify-center items-center overflow-hidden`} id='wrap'>
-            <div className="expandload z-10 text-center text-white bg-white bg-opacity-15 font-sans flex justify-center items-center w-3/4  py-20 rounded-full border-4 border-double  border-white overflow-y-hidden ">
+            {visible ? (
+                <div className='flex justify-center items-center w-full h-screen'>
                 <AnimateSee>
-                <p className="tracking-widest italic pb-5 ">Wedding Invitation</p>
-                <h2 className="sacramento text-[3rem] font-extrabold  p-5 leading-[3.5rem]  text-orange-950" style={{ textShadow: '1px 1px white' }}>
-                    {weddingData?.name?.mens}
-                    <br />&<br />
-                    {weddingData?.name?.grils}
-                </h2>
-                <p className="">Kepada Yth.</p>
-                <h3 className="py-2 text-xl text-white font-bold" style={{ textShadow: '2px 2px black' }}>{name}</h3>
-                <button onClick={btnElement} className="bg-slate-950 shadow-md border border-white shadow-slate-300 rounded-md flex justify-center items-center w-1/2 text-white py-1 px-4 mt-4 mx-auto">
-                    <FaEnvelopeOpen size={15} className='mr-2' />
-                    Open
-                </button>
+                    <div className='w-2/5 m-auto border-4 border-black border-double rounded-xl text-center '>
+                        <h1 className='bg-orange-400 rounded-t-lg text-3xl font-bold p-2'>Warning ...!</h1>
+                        <p className='italic p-2'>Mohon Maaf jika mengganggu kenyamanan anda, content ini hanya tersedia untuk tampilan Handphone </p>
+                    </div>
                 </AnimateSee>
             </div>
-            <BubbleAnimation />
-        </section>
-        )
-        }
-        <section id='page2' className='relative h-auto'>
-            <button onClick={toggleMusic} 
-                // id='bgToggle'
-                className={`w-10 h-10 rounded-full border border-white flex justify-center items-center fixed bottom-16 left-5 z-20 ${bgToggle}`}>
-                <GiMusicSpell className='fill-current text-white rotate-icon' size={25} />
-            </button>
-            <diV className="fixed -bottom-1 z-20 w-full">
-                <div className=' bg-black border border-white  bg-opacity-15 w-[80%]  m-auto relative flex justify-between grid-cols-5 text-4xl text-white  rounded-t-xl'>
-                <button onClick={() => togleScroll('home')} className='p-2'><ImHome /></button>
-                <button onClick={() => togleScroll('couple')}  className='p-2'><ImInfo /></button>
-                <button onClick={() => togleScroll('date')}  className='p-2'><BiSolidCalendarHeart /></button>
-                <button onClick={() => togleScroll('gift')}  className='p-2'><HiMiniGiftTop /></button>
-                <button onClick={() => togleScroll('ucapan')} className='p-2'><SlSpeech /></button>
-                </div>
-            </diV>
-            
-            <div id='home'>
-                <Page2 data={weddingData}/>
-            </div>
-            <Page3 />
-            <div id='couple'>
-                <Page4 data={weddingData} />
-            </div>
-            <Page5 />
-            <div id='date'>
-                <Page6 data={weddingData} propsid='gift' />
-            </div>
-            <div id='ucapan'>
-                <Page7 data={weddingData} id={id}  />
-            </div>
-            <Page8 data={weddingData} />
-        </section>
+            ): 
+            (
+                <section className='max-w-[400px] m-auto'>
+                    {loading ? (
+                    <section className='h-screen relative z-30 flex justify-center items-center bg-black w-full m-auto text-xl'>
+                        
+                        <div className='absolute  m-auto z-30'>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="75"
+                                height="75"
+                                viewBox="0 0 100 100"
+                                fill="none"
+                                className={style.loader}
+                            >
+                                <circle cx="50" cy="50" r="45" stroke="#00000" strokeWidth="5" />
+                                <circle cx="50" cy="50" r="45" stroke="#3498db" strokeWidth="5" strokeDasharray="100" strokeDashoffset="75" className="animate-loader" />
+                            </svg>
+                        </div>
+                        <div className={style.bubbleContainer}>
+                            <div className={style.bubble}></div>
+                            <div className={style.bubble}></div>
+                            <div className={style.bubble}></div>
+                            <div className={style.bubble}></div>
+                            <div className={style.bubble}></div>
+                        </div>
+                    </section>
+                ):
+                (
+                    <section className={`${style.bgSection}  z-30 w-full relative overflow-x-hidden flex justify-center items-center overflow-hidden`} id='wrap'>
+                    <div className="expandload z-10 text-center text-white bg-white bg-opacity-15 font-sans flex justify-center items-center w-3/4  py-20 rounded-full border-4 border-double  border-white overflow-y-hidden ">
+                        <AnimateSee>
+                        <p className="tracking-widest italic pb-5 ">Wedding Invitation</p>
+                        <h2 className="sacramento text-[3rem] font-extrabold  p-5 leading-[3.5rem]  text-orange-950" style={{ textShadow: '1px 1px white' }}>
+                            {weddingData?.name?.mens}
+                            <br />&<br />
+                            {weddingData?.name?.grils}
+                        </h2>
+                        <p className="">Kepada Yth.</p>
+                        <h3 className="py-2 text-xl text-white font-bold" style={{ textShadow: '2px 2px black' }}>{name}</h3>
+                        <button onClick={btnElement} className="bg-slate-950 shadow-md border border-white shadow-slate-300 rounded-md flex justify-center items-center w-1/2 text-white py-1 px-4 mt-4 mx-auto">
+                            <FaEnvelopeOpen size={15} className='mr-2' />
+                            Open
+                        </button>
+                        </AnimateSee>
+                    </div>
+                    <BubbleAnimation />
+                </section>
+                )
+                }
+                <section id='page2' className='relative h-auto'>
+                    <button onClick={toggleMusic} 
+                        // id='bgToggle'
+                        className={`w-10 h-10 rounded-full border border-white flex justify-center items-center fixed bottom-16 left-5 z-20 ${bgToggle}`}>
+                        <GiMusicSpell className='fill-current text-white rotate-icon' size={25} />
+                    </button>
+                    <diV className="fixed -bottom-1 z-20 w-full">
+                        <div className=' bg-black border border-white  bg-opacity-15 w-[80%]  m-auto relative flex justify-between grid-cols-5 text-4xl text-white  rounded-t-xl'>
+                        <button onClick={() => togleScroll('home')} className='p-2'><ImHome /></button>
+                        <button onClick={() => togleScroll('couple')}  className='p-2'><ImInfo /></button>
+                        <button onClick={() => togleScroll('date')}  className='p-2'><BiSolidCalendarHeart /></button>
+                        <button onClick={() => togleScroll('gift')}  className='p-2'><HiMiniGiftTop /></button>
+                        <button onClick={() => togleScroll('ucapan')} className='p-2'><SlSpeech /></button>
+                        </div>
+                    </diV>
+                    
+                    <div id='home'>
+                        <Page2 data={weddingData}/>
+                    </div>
+                    <Page3 />
+                    <div id='couple'>
+                        <Page4 data={weddingData} />
+                    </div>
+                    <Page5 />
+                    <div id='date'>
+                        <Page6 data={weddingData} propsid='gift' />
+                    </div>
+                    <div id='ucapan'>
+                        <Page7 data={weddingData} id={id}  />
+                    </div>
+                    <Page8 data={weddingData} />
+                </section>
+                </section> 
+            )}
+        
         <audio id='weddingMusic' className='z-50' loop>
                 <source src={Music} type='audio/mp3' />
         </audio>

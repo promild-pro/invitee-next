@@ -69,7 +69,7 @@ const handleSaveDate = () => {
 };
 
     return(
-      <section>
+      <section className="bg-[#2f6d27fa]">
         <section className={style.bg} id="page2">
             {/* <div className="relative h-[100vh] z-40"> */}
             <div className=" absolute bottom-10 flex-row justify-center w-full items-center">
