@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 // import Head from "next/head";
 import "./globals.css";
+import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,7 +22,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      {/* <Head> */}
+      {/* </Head> */}
       <head>
+        <link rel="icon" href="/og-icons.png" />
       <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet" />
       </head>
       <body
